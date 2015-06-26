@@ -1,0 +1,290 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.UsuarioDTO;
+import interfaces.UsuarioDAO;
+
+public class MySqlUsuarioDAO implements UsuarioDAO {
+
+	@Override
+	public List<UsuarioDTO> listarUsuariosAdministradores() {
+		List<UsuarioDTO> data = new ArrayList<UsuarioDTO>();
+		UsuarioDTO u = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
+					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
+					+ "u.idSexo,s.descripcionSexo,u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
+					+ "from Usuario as u inner join TipoUsuario as tu "
+					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
+					+ "on u.idDistrito = d.idDistrito inner join Sexo as s "
+					+ "on u.idSexo = s.idSexo inner join AreaMunicipal as am "
+					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
+					+ "on u.idEstadoUsuario = eu.idEstadoUsuario";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			while(rs.next()){
+				u = new UsuarioDTO();
+				u.setIdUsuario(rs.getInt(1));
+				u.setNombresUsuario(rs.getString(2));
+				u.setApellidoPaternoUsuario(rs.getString(3));
+				u.setApellidoMaternoUsuario(rs.getString(4));
+				u.setFechaNacimientoUsuario(rs.getString(5));
+				u.setDireccionUsuario(rs.getString(6));
+				u.setCorreoUsuario(rs.getString(7));
+				u.setTelefonoUsuario(rs.getString(8));
+				u.setDniUsuario(rs.getInt(9));
+				u.setLoginUsuario(rs.getString(10));
+				u.setPasswordUsuario(rs.getString(11));
+				u.setIdTipoUsuario(rs.getInt(12));
+				u.setDescripcionTipoUsuario(rs.getString(13));
+				u.setIdDistrito(rs.getInt(14));
+				u.setNombreDistrito(rs.getString(15));
+				u.setIdSexo(rs.getInt(16));
+				u.setDescripcionSexo(rs.getString(17));
+				u.setIdAreaMunicipal(rs.getInt(18));
+				u.setNombreAreaMunicipal(rs.getString(19));
+				u.setIdEstadoUsuario(rs.getInt(20));
+				u.setDescripcionEstadoUsuario(rs.getString(21));
+				data.add(u);				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public int registrarUsuarioAdministrador(UsuarioDTO u) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql ="";
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "insert into usuario values(null,?,?,?,?,?,?,?,?,?,?,1,?,?,1,1)";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, u.getNombresUsuario());
+			pstm.setString(2, u.getApellidoPaternoUsuario());
+			pstm.setString(3, u.getApellidoMaternoUsuario());
+			pstm.setString(4, u.getFechaNacimientoUsuario());
+			pstm.setString(5, u.getDireccionUsuario());
+			pstm.setString(6, u.getCorreoUsuario());
+			pstm.setString(7, u.getTelefonoUsuario());
+			pstm.setInt(8, u.getDniUsuario());
+			pstm.setString(9, u.getLoginUsuario());
+			pstm.setString(10, u.getPasswordUsuario());
+			pstm.setInt(11, u.getIdDistrito());
+			pstm.setInt(12, u.getIdSexo());
+			estado = pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}		
+		return estado;
+	}
+
+	@Override
+	public UsuarioDTO buscarUsuarioAdministrador(int idUsuario) {
+		UsuarioDTO u = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
+					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
+					+ "u.idSexo,s.descripcionSexo,u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
+					+ "from Usuario as u inner join TipoUsuario as tu "
+					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
+					+ "on u.idDistrito = d.idDistrito inner join Sexo as s "
+					+ "on u.idSexo = s.idSexo inner join AreaMunicipal as am "
+					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
+					+ "on u.idEstadoUsuario = eu.idEstadoUsuario "
+					+ "where u.idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idUsuario);
+			rs = pstm.executeQuery();
+			if(rs.next()){
+				u = new UsuarioDTO();
+				u.setIdUsuario(rs.getInt(1));
+				u.setNombresUsuario(rs.getString(2));
+				u.setApellidoPaternoUsuario(rs.getString(3));
+				u.setApellidoMaternoUsuario(rs.getString(4));
+				u.setFechaNacimientoUsuario(rs.getString(5));
+				u.setDireccionUsuario(rs.getString(6));
+				u.setCorreoUsuario(rs.getString(7));
+				u.setTelefonoUsuario(rs.getString(8));
+				u.setDniUsuario(rs.getInt(9));
+				u.setLoginUsuario(rs.getString(10));
+				u.setPasswordUsuario(rs.getString(11));
+				u.setIdTipoUsuario(rs.getInt(12));
+				u.setDescripcionTipoUsuario(rs.getString(13));
+				u.setIdDistrito(rs.getInt(14));
+				u.setNombreDistrito(rs.getString(15));
+				u.setIdSexo(rs.getInt(16));
+				u.setDescripcionSexo(rs.getString(17));
+				u.setIdAreaMunicipal(rs.getInt(18));
+				u.setNombreAreaMunicipal(rs.getString(19));
+				u.setIdEstadoUsuario(rs.getInt(20));
+				u.setDescripcionEstadoUsuario(rs.getString(21));				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return u;
+	}
+
+	@Override
+	public int modificarUsuarioAdministrador(UsuarioDTO u) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "update usuario "
+					+ "set nombresUsuario = ?, apellidoPaternoUsuario=?, apellidoMaternoUsuario=?, "
+					+ "fechaNacimientoUsuario=?,direccionUsuario=?,correoUsuario=?,telefonoUsuario=?, "
+					+ "dniUsuario=?,loginUsuario=?,passwordUsuario=?,idTipoUsuario=1,idDistrito=?, "
+					+ "idSexo=?, idAreaMunicipal=1,idEstadoUsuario=1 "
+					+ "where idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, u.getNombresUsuario());
+			pstm.setString(2, u.getApellidoPaternoUsuario());
+			pstm.setString(3, u.getApellidoMaternoUsuario());
+			pstm.setString(4, u.getFechaNacimientoUsuario());
+			pstm.setString(5, u.getDireccionUsuario());
+			pstm.setString(5, u.getCorreoUsuario());
+			pstm.setString(6, u.getTelefonoUsuario());
+			pstm.setInt(7, u.getDniUsuario());
+			pstm.setString(8, u.getLoginUsuario());
+			pstm.setString(9, u.getPasswordUsuario());
+			pstm.setInt(10, u.getIdDistrito());
+			pstm.setInt(11, u.getIdSexo());
+			pstm.setInt(12, u.getIdUsuario());
+			estado = pstm.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
+	}
+
+	@Override
+	public int eliminarUsuarioAdministrador(int idUsuario) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "delete from usuario "
+					+ "where idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idUsuario);
+			estado = pstm.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
+	}
+
+	@Override
+	public UsuarioDTO iniciarSesion(String login) {
+		Connection cn=null;
+		PreparedStatement pstm=null;
+		ResultSet rs=null;
+		UsuarioDTO obj=null;
+		try {
+			cn=MySqlDBConexion.getConexion();
+			String sql="select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario, "
+					+ "u.apellidoMaternoUsuario,u.loginUsuario,u.passwordUsuario, "
+					+ "u.idTipoUsuario,tu.descripcionTipoUsuario from usuario as u inner join tipousuario as tu "
+					+ "on u.idTipoUsuario = tu.idTipoUsuario "
+					+ "where loginUsuario = ?";
+			pstm=cn.prepareStatement(sql);
+			pstm.setString(1, login);
+			rs=pstm.executeQuery();
+			if(rs.next()){
+				obj = new UsuarioDTO();
+				obj.setIdUsuario(rs.getInt(1));
+				obj.setNombresUsuario(rs.getString(2));
+				obj.setApellidoPaternoUsuario(rs.getString(3));
+				obj.setApellidoMaternoUsuario(rs.getString(4));
+				obj.setLoginUsuario(rs.getString(5));
+				obj.setPasswordUsuario(rs.getString(6));
+				obj.setIdTipoUsuario(rs.getInt(7));
+				obj.setDescripcionTipoUsuario(rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				if(rs!=null)rs.close();if(pstm!=null)pstm.close();if(cn!=null)cn.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return obj;
+
+	}
+
+}
