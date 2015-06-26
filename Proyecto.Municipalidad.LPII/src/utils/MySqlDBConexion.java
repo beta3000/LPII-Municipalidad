@@ -48,7 +48,7 @@ public class MySqlDBConexion {
 					DriverManager.getConnection(
 							"jdbc:mysql://localhost:3306/proyecto.lpii", 
 							"root", 
-							"mysql");
+							"");
 				
 				
 			} catch (SQLException e) {
