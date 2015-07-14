@@ -31,47 +31,47 @@
     <!-- Inicio Formulario de Registro-->
     <div class="container">
       <div class="row">
-        <form action="" class="form-horizontal" name="" method="POST">
+        <form action="MantenimientoUsuario?tipo=registrarEmpleado" class="form-horizontal" name="" method="POST">
           <div class="form-group">
             <label for="inputNombres" class="col-sm-3 control-label">Nombres</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres">
+              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" name="txtNombres" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoPaterno" class="col-sm-3 control-label">Apellido Paterno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno">
+              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno" name="txtApellidoPaterno" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoMaterno" class="col-sm-3 control-label">Apellido Materno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno">
+              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno" name="txtApellidoMaterno" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputfechaNacimiento" class="col-sm-3 control-label">Fecha Nacimiento</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="inputfechaNacimiento">
+              <input type="date" class="form-control" id="inputfechaNacimiento" name="txtFecha" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDNI" class="col-sm-3 control-label">DNI</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDNI" placeholder="DNI">
+              <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="txtDNI" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputCorreo" class="col-sm-3 control-label">Correo</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo">
+              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" name="txtCorreo" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDireccion" class="col-sm-3 control-label">Dirección</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" name="txtDireccion" required>
             </div>
           </div>
           <div class="form-group">
@@ -118,19 +118,19 @@
           <div class="form-group">
             <label for="inputTelefono" class="col-sm-3 control-label">Teléfono</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono">
+              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputLogin" class="col-sm-3 control-label">Login</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputLogin" placeholder="Login">
+              <input type="text" class="form-control" id="inputLogin" placeholder="Login" name="txtLogin" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+              <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="txtPassword" required>
             </div>
           </div>
           <div class="form-group">

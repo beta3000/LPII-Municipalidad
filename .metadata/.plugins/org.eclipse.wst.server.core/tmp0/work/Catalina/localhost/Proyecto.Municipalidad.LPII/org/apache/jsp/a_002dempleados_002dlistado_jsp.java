@@ -135,7 +135,7 @@ public final class a_002dempleados_002dlistado_jsp extends org.apache.jasper.run
       out.write("                  USUARIOS <b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-empleados-listado.jsp\">Empleados Municipales</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarEmpleado\">Empleados Municipales</a></li>\r\n");
       out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarAdministrador\">Administradores</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
@@ -275,7 +275,7 @@ public final class a_002dempleados_002dlistado_jsp extends org.apache.jasper.run
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.descripcionTipoUsuario}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\r\n");
           out.write("            <td>\r\n");
-          out.write("              <a href=\"MantenimientoUsuario?tipo=cargarDatosAdministrador&idUsuarioAdministrador=");
+          out.write("              <a href=\"MantenimientoUsuario?tipo=cargarDatosEmpleado&idUsuarioEmpleado=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.idUsuario}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\">\r\n");
           out.write("                <button class=\"btn btn-primary\">\r\n");
@@ -283,7 +283,7 @@ public final class a_002dempleados_002dlistado_jsp extends org.apache.jasper.run
           out.write("                  Editar\r\n");
           out.write("                </button>\r\n");
           out.write("              </a>\r\n");
-          out.write("              <a href=\"MantenimientoUsuario?tipo=eliminarAdministrador&idUsuarioAdministrador=");
+          out.write("              <a href=\"MantenimientoUsuario?tipo=eliminarEmpleado&idUsuarioEmpleado=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.idUsuario}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("\">\r\n");
           out.write("                <button class=\"btn btn-danger\">\r\n");

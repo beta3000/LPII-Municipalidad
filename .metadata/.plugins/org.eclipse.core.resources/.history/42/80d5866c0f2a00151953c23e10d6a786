@@ -1,0 +1,147 @@
+package dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.MemorandoDTO;
+import interfaces.MemorandoDAO;
+
+public class MySqlMemorandoDAO implements MemorandoDAO {
+
+	@Override
+	public List<MemorandoDTO> listarMemorandosRequerimientoVehicular() {
+		List<MemorandoDTO> data = new ArrayList<MemorandoDTO>();
+		MemorandoDTO m = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
+					+ "am.descripcionAuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando "
+					+ "u.idUsuarioRemitente "
+					+ "from memorando as m inner join asuntomemorando as am "
+					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
+					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
+					+ "m.idUsuarioRemitente = u.idUsuario "
+					+ "where m.idAsuntoMemorando = 1";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()){
+				m = new MemorandoDTO();
+				m.setIdMemorando(rs.getInt(1));
+				m.setFechaMemorando(rs.getString(2));
+				m.setContenidoMemorando(rs.getString(3));
+				m.setIdAsuntoMemorando(rs.getInt(4));
+				m.setDescripcionAsuntoMemorando(rs.getString(5));
+				m.setIdEstadoMemorando(rs.getInt(6));
+				m.setDescripcionEstadoMemorando(rs.getString(7));
+				m.setIdUsuarioRemitente(rs.getInt(8));
+				
+				data.add(m);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public List<MemorandoDTO> listarMemorandosReparacionVehicular() {
+		List<MemorandoDTO> data = new ArrayList<MemorandoDTO>();
+		MemorandoDTO m = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
+					+ "am.descripcionAuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando "
+					+ "u.idUsuarioRemitente "
+					+ "from memorando as m inner join asuntomemorando as am "
+					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
+					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
+					+ "m.idUsuarioRemitente = u.idUsuario "
+					+ "where m.idAsuntoMemorando = 2";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()){
+				m = new MemorandoDTO();
+				m.setIdMemorando(rs.getInt(1));
+				m.setFechaMemorando(rs.getString(2));
+				m.setContenidoMemorando(rs.getString(3));
+				m.setIdAsuntoMemorando(rs.getInt(4));
+				m.setDescripcionAsuntoMemorando(rs.getString(5));
+				m.setIdEstadoMemorando(rs.getInt(6));
+				m.setDescripcionEstadoMemorando(rs.getString(7));
+				m.setIdUsuarioRemitente(rs.getInt(8));
+				
+				data.add(m);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public int registrarMemorando(MemorandoDTO m) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "insert into memorando values(null,?,?,?,?,?)";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, m.getFechaMemorando());
+			pstm.setString(2, m.getContenidoMemorando());
+			pstm.setInt(3, m.getIdAsuntoMemorando());
+			pstm.setInt(4, m.getIdEstadoMemorando());
+			pstm.setInt(5, m.getIdUsuarioRemitente());
+			estado = pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
+	}
+
+	@Override
+	public int revisarMemorando(int idMemorando) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+}

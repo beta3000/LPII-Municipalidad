@@ -71,7 +71,7 @@
           <div class="form-group">
             <label for="inputDireccion" class="col-sm-3 control-label">Dirección</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" name="txtDireccion">
+              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" name="txtDireccion" required>
             </div>
           </div>
           <div class="form-group">

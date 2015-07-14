@@ -47,7 +47,120 @@ public class MantenimientoUsuario extends HttpServlet {
 			sesion(request,response);
 		}else if(tipo.equals("listarEmpleado")){
 			listarEmpleado(request,response);
+		}else if(tipo.equals("registrarEmpleado")){
+			registrarEmpleado(request,response);
+		}else if(tipo.equals("cargarDatosEmpleado")){
+			cargarDatosEmpleado(request,response);
+		}else if (tipo.equals("modificarEmpleado")) {
+			modificarEmpleado(request,response);
+		}else if(tipo.equals("eliminarEmpleado")){
+			eliminarEmpleado(request,response);
 		}
+	}
+
+	private void eliminarEmpleado(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		int estado =-1;
+		int idUsuarioEmpleado = Integer.parseInt(request.getParameter("idUsuarioEmpleado"));
+		estado = m.eliminaUsuarioEmpleado(idUsuarioEmpleado);
+		if(estado == 1){
+			listarEmpleado(request, response);
+		}
+		
+	}
+
+	private void modificarEmpleado(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		int estado =-1;
+		int idUsuarioEmpleado = Integer.parseInt(request.getParameter("idUsuarioEmpleado"));
+		String nombres = request.getParameter("txtNombres");
+		String apPaterno = request.getParameter("txtApellidoPaterno");
+		String apMaterno = request.getParameter("txtApellidoMaterno");
+		String fecNac = request.getParameter("txtFecha");
+		String direccion = request.getParameter("txtDireccion");
+		String correo = request.getParameter("txtCorreo");
+		String telefono = request.getParameter("txtTelefono");
+		int dni = Integer.parseInt(request.getParameter("txtDNI"));
+		String login = request.getParameter("txtLogin");
+		String password = request.getParameter("txtPassword");
+		int idDistrito = Integer.parseInt(request.getParameter("selectDistrito"));
+		String sexo = request.getParameter("selectSexo");
+		int idTipoUsuario = Integer.parseInt(request.getParameter("selectCargo"));
+		int idAreaMunicipal = Integer.parseInt(request.getParameter("selectArea"));
+		int idEstadoUsuario = Integer.parseInt(request.getParameter("selectEstado"));
+		UsuarioDTO u = new UsuarioDTO();
+		u.setNombresUsuario(nombres);
+		u.setApellidoPaternoUsuario(apPaterno);
+		u.setApellidoMaternoUsuario(apMaterno);
+		u.setFechaNacimientoUsuario(fecNac);
+		u.setDireccionUsuario(direccion);
+		u.setCorreoUsuario(correo);
+		u.setTelefonoUsuario(telefono);
+		u.setDniUsuario(dni);
+		u.setLoginUsuario(login);
+		u.setPasswordUsuario(password);
+		u.setIdDistrito(idDistrito);
+		u.setSexoUsuario(sexo);
+		u.setIdTipoUsuario(idTipoUsuario);
+		u.setIdAreaMunicipal(idAreaMunicipal);
+		u.setIdEstadoUsuario(idEstadoUsuario);
+		u.setIdUsuario(idUsuarioEmpleado);
+		estado = m.modificaUsuarioEmpleado(u);
+		
+		if(estado == 1){
+			listarEmpleado(request,response);
+		}
+		
+	}
+
+	private void cargarDatosEmpleado(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		int idUsuarioEmpleado = Integer.parseInt(request.getParameter("idUsuarioEmpleado"));
+		request.setAttribute("usuarioEmpleado",m.buscaUsuarioempleado(idUsuarioEmpleado));
+		request.getRequestDispatcher("a-empleados-modificar.jsp").forward(request, response);
+		
+	}
+
+	private void registrarEmpleado(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		int estado =-1;
+		String nombres = request.getParameter("txtNombres");
+		String apPaterno = request.getParameter("txtApellidoPaterno");
+		String apMaterno = request.getParameter("txtApellidoMaterno");
+		String fecNac = request.getParameter("txtFecha");
+		String direccion = request.getParameter("txtDireccion");
+		String correo = request.getParameter("txtCorreo");
+		String telefono = request.getParameter("txtTelefono");
+		int dni = Integer.parseInt(request.getParameter("txtDNI"));
+		String login = request.getParameter("txtLogin");
+		String password = request.getParameter("txtPassword");
+		int idDistrito = Integer.parseInt(request.getParameter("selectDistrito"));
+		String sexo = request.getParameter("selectSexo");
+		int idTipoUsuario = Integer.parseInt(request.getParameter("selectCargo"));
+		int idAreaMunicipal = Integer.parseInt(request.getParameter("selectArea"));
+		int idEstadoUsuario = Integer.parseInt(request.getParameter("selectEstado"));
+		UsuarioDTO u = new UsuarioDTO();
+		u.setNombresUsuario(nombres);
+		u.setApellidoPaternoUsuario(apPaterno);
+		u.setApellidoMaternoUsuario(apMaterno);
+		u.setFechaNacimientoUsuario(fecNac);
+		u.setDireccionUsuario(direccion);
+		u.setCorreoUsuario(correo);
+		u.setTelefonoUsuario(telefono);
+		u.setDniUsuario(dni);
+		u.setLoginUsuario(login);
+		u.setPasswordUsuario(password);
+		u.setIdDistrito(idDistrito);
+		u.setSexoUsuario(sexo);
+		u.setIdTipoUsuario(idTipoUsuario);
+		u.setIdAreaMunicipal(idAreaMunicipal);
+		u.setIdEstadoUsuario(idEstadoUsuario);
+		estado = m.registraUsuarioEmpleado(u);
+		
+		if(estado == 1){
+			listarEmpleado(request,response);
+		}
+		
 	}
 
 	private void listarEmpleado(HttpServletRequest request,
@@ -120,7 +233,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		u.setLoginUsuario(login);
 		u.setPasswordUsuario(password);
 		u.setIdDistrito(idDistrito);
-		u.setSexousuario(sexo);
+		u.setSexoUsuario(sexo);
 		estado = m.modificaUsuarioAdministrador(u);
 		
 		if(estado == 1){
@@ -171,7 +284,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		u.setLoginUsuario(login);
 		u.setPasswordUsuario(password);
 		u.setIdDistrito(idDistrito);
-		u.setSexousuario(sexo);
+		u.setSexoUsuario(sexo);
 		estado = m.registraUsuarioAdministrador(u);
 		
 		if(estado == 1){

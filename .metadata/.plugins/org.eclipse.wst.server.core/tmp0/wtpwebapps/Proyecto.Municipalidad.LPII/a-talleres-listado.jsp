@@ -48,11 +48,11 @@
           <jstlc:forEach items="${requestScope.listaTalleres }" var="l">
             <tr>
               <td>${l.idTallerMecanico}</td>
-            <td>${l.nombreTallerMecanico}</td>
-            <td>${l.direccionTallerMecanico}</td>
-            <td>${l.telefonoTallerMecanico}</td>
-            <td>${l.nombreDistrito}</td>
-            <td>
+              <td>${l.nombreTallerMecanico}</td>
+              <td>${l.direccionTallerMecanico}</td>
+              <td>${l.telefonoTallerMecanico}</td>
+              <td>${l.nombreDistrito}</td>
+              <td>
               <a href="MantenimientoTallerMecanico?tipo=cargarDatos&idTaller=${l.idTallerMecanico}">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-pencil"></span>

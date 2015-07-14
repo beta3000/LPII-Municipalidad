@@ -49,7 +49,7 @@
                   USUARIOS <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-empleados-listado.jsp">Empleados Municipales</a></li>
+                  <li><a href="MantenimientoUsuario?tipo=listarEmpleado">Empleados Municipales</a></li>
                   <li><a href="MantenimientoUsuario?tipo=listarAdministrador">Administradores</a></li>
                 </ul>
               </li>

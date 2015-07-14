@@ -17,7 +17,7 @@ public class UsuarioDTO {
 	private String descripcionTipoUsuario;
 	private int idDistrito;
 	private String nombreDistrito;
-	private String sexousuario;
+	private String sexoUsuario;
 	private int idAreaMunicipal;
 	private String nombreAreaMunicipal;
 	private int idEstadoUsuario;
@@ -112,11 +112,11 @@ public class UsuarioDTO {
 	public void setNombreDistrito(String nombreDistrito) {
 		this.nombreDistrito = nombreDistrito;
 	}
-	public String getSexousuario() {
-		return sexousuario;
+	public String getSexoUsuario() {
+		return sexoUsuario;
 	}
-	public void setSexousuario(String sexousuario) {
-		this.sexousuario = sexousuario;
+	public void setSexoUsuario(String sexousuario) {
+		this.sexoUsuario = sexousuario;
 	}
 	public int getIdAreaMunicipal() {
 		return idAreaMunicipal;

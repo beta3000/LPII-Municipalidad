@@ -132,7 +132,7 @@ public final class a_002dvehiculos_002dlistado_jsp extends org.apache.jasper.run
       out.write("                  USUARIOS <b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-empleados-listado.jsp\">Empleados Municipales</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarEmpleado\">Empleados Municipales</a></li>\r\n");
       out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarAdministrador\">Administradores</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");

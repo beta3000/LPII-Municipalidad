@@ -1,0 +1,12 @@
+package interfaces;
+
+import java.util.List;
+
+import beans.MemorandoDTO;
+
+public interface MemorandoDAO {
+
+	public List<MemorandoDTO> listarMemorandos();
+	public int registrarMemorando(MemorandoDTO m);
+	public int revisarMemorando(int idMemorando);
+}

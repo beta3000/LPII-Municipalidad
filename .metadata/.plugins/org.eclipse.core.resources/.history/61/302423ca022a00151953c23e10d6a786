@@ -1,0 +1,17 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.MemorandoDTO;
+import beans.TallerMecanicoDTO;
+import interfaces.MemorandoDAO;
+
+public class MySqlMemorandoDAO implements MemorandoDAO {
+
+
+}

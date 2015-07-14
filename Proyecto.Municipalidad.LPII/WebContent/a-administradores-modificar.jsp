@@ -31,7 +31,7 @@
     <!-- Inicio Formulario de Registro-->
     <div class="container">
       <div class="row">
-        <form action="MantenimientoUsuario?tipo=registrarAdministrador" class="form-horizontal" name="" method="POST">
+        <form action="MantenimientoUsuario?tipo=modificarAdministrador&idUsuarioAdministrador=${requestScope.usuarioAdministrador.idUsuario}" class="form-horizontal" name="" method="POST">
           <div class="form-group">
             <label for="inputNombres" class="col-sm-3 control-label">Nombres</label>
             <div class="col-sm-5">

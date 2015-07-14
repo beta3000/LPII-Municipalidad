@@ -1,0 +1,20 @@
+package service;
+
+import java.util.List;
+
+import beans.MemorandoDTO;
+import interfaces.MemorandoDAO;
+import utils.Constantes;
+import dao.DAOFactory;
+
+public class ManteMemorandoService {
+
+	DAOFactory fabrica = DAOFactory.getDAOFactory(Constantes.ORIGEN_DATOS);
+	MemorandoDAO objMemorando = fabrica.getMemorandoDAO();
+	
+	public List<MemorandoDTO> listarMemorandosRequerimientoVehicular() {
+		return objMemorando.listarMemorandosRequerimientoVehicular();
+	}
+	
+	
+}

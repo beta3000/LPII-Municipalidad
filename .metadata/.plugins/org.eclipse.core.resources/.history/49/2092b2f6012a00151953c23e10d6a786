@@ -1,0 +1,8 @@
+package interfaces;
+
+import beans.MemorandoDTO;
+
+public interface MemorandoDAO {
+
+	public int registrarMemorando(MemorandoDTO m);
+}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="jstlc" uri="http://java.sun.com/jstl/core_rt"%>     
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Memorandos - Mantenimiento de Vehículos</title>
+    <title>Memorandos - Reparación Vehicular</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,8 +23,13 @@
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Memorandos de Mantenimiento de Vehículos</h1>
-        <p>En la siguiente lista se muestran los Memorandos de Mantenimiento de Vehículos registrados en el Sistema.</p>
+        <h1 class="text-left">Memorandos de Reparación Vehicular <a href="ja-memorandos-2-nuevo.jsp">
+                <button class="btn btn-primary">
+                  <span class="glyphicon glyphicon-plus"></span>
+                  Agregar Nuevo
+                </button>
+        </a></h1>
+        <p>En la siguiente lista se muestran los Memorandos de Reparación Vehicular registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->

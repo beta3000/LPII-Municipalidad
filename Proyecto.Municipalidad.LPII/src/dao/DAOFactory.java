@@ -1,6 +1,7 @@
 package dao;
 
 import interfaces.ComboDAO;
+import interfaces.MemorandoDAO;
 import interfaces.TallerMecanicoDAO;
 import interfaces.UsuarioDAO;
 import interfaces.VehiculoDAO;
@@ -21,6 +22,7 @@ public abstract class DAOFactory {
     public abstract TallerMecanicoDAO getTallerMecanicoDAO();
     public abstract ComboDAO getComboDAO();
     public abstract UsuarioDAO getUsuarioDAO();
+    public abstract MemorandoDAO getMemorandoDAO();
 
     
     public static DAOFactory getDAOFactory(int whichFactory){

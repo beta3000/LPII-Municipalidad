@@ -133,7 +133,7 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("                  USUARIOS <b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-empleados-listado.jsp\">Empleados Municipales</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarEmpleado\">Empleados Municipales</a></li>\r\n");
       out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarAdministrador\">Administradores</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
@@ -216,7 +216,7 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputDireccion\" class=\"col-sm-3 control-label\">Dirección</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputDireccion\" placeholder=\"Dirección\" name=\"txtDireccion\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputDireccion\" placeholder=\"Dirección\" name=\"txtDireccion\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");

@@ -66,13 +66,13 @@
             <td>${l.nombreDistrito}</td>
             <td>${l.descripcionTipoUsuario}</td>
             <td>
-              <a href="MantenimientoUsuario?tipo=cargarDatosAdministrador&idUsuarioAdministrador=${l.idUsuario}">
+              <a href="MantenimientoUsuario?tipo=cargarDatosEmpleado&idUsuarioEmpleado=${l.idUsuario}">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-pencil"></span>
                   Editar
                 </button>
               </a>
-              <a href="MantenimientoUsuario?tipo=eliminarAdministrador&idUsuarioAdministrador=${l.idUsuario}">
+              <a href="MantenimientoUsuario?tipo=eliminarEmpleado&idUsuarioEmpleado=${l.idUsuario}">
                 <button class="btn btn-danger">
                   <span class="glyphicon glyphicon-remove"></span>
                   Eliminar

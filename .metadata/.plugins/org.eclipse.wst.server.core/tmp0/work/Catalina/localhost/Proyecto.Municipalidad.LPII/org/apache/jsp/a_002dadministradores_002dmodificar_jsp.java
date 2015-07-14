@@ -133,7 +133,7 @@ public final class a_002dadministradores_002dmodificar_jsp extends org.apache.ja
       out.write("                  USUARIOS <b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-empleados-listado.jsp\">Empleados Municipales</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarEmpleado\">Empleados Municipales</a></li>\r\n");
       out.write("                  <li><a href=\"MantenimientoUsuario?tipo=listarAdministrador\">Administradores</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
@@ -176,7 +176,9 @@ public final class a_002dadministradores_002dmodificar_jsp extends org.apache.ja
       out.write("    <!-- Inicio Formulario de Registro-->\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"row\">\r\n");
-      out.write("        <form action=\"MantenimientoUsuario?tipo=registrarAdministrador\" class=\"form-horizontal\" name=\"\" method=\"POST\">\r\n");
+      out.write("        <form action=\"MantenimientoUsuario?tipo=modificarAdministrador&idUsuarioAdministrador=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.usuarioAdministrador.idUsuario}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("\" class=\"form-horizontal\" name=\"\" method=\"POST\">\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputNombres\" class=\"col-sm-3 control-label\">Nombres</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");

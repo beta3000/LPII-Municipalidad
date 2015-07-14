@@ -63,7 +63,7 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n");
       out.write("    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->\r\n");
-      out.write("    <title>Memorandos - Requerimiento de Vehículos y Choferes</title>\r\n");
+      out.write("    <title>Memorandos - Requerimiento Vehicular</title>\r\n");
       out.write("    <!-- Bootstrap -->\r\n");
       out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\r\n");
       out.write("    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->\r\n");
@@ -126,8 +126,13 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
       out.write("    <!-- Inicio cabezera -->\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"row\">\r\n");
-      out.write("        <h1 class=\"text-left\">Memorandos de Requerimento de Vehículo y Choferes</h1>\r\n");
-      out.write("        <p>En la siguiente lista se muestran los Memorandos de Requerimientos de Vehículos y Choferes registrados en el Sistema.</p>\r\n");
+      out.write("        <h1 class=\"text-left\">Memorandos de Requerimiento Vehicular <a href=\"ja-memorandos-1-nuevo.jsp\">\r\n");
+      out.write("                <button class=\"btn btn-primary\">\r\n");
+      out.write("                  <span class=\"glyphicon glyphicon-plus\"></span>\r\n");
+      out.write("                  Agregar Nuevo\r\n");
+      out.write("                </button>\r\n");
+      out.write("        </a></h1>\r\n");
+      out.write("        <p>En la siguiente lista se muestran los Memorandos de Requerimiento Vehicular registrados en el Sistema.</p>\r\n");
       out.write("      </div>\r\n");
       out.write("    </div>\r\n");
       out.write("    <!-- Fin cabezera-->\r\n");

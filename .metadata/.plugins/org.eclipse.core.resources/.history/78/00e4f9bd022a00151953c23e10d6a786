@@ -1,0 +1,28 @@
+package dao;
+
+import java.util.List;
+
+import beans.MemorandoDTO;
+import interfaces.MemorandoDAO;
+
+public class MySqlMemorandoDAO implements MemorandoDAO {
+
+	@Override
+	public int registrarMemorando(MemorandoDTO m) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int revisarMemorando(int idMemorando) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<MemorandoDTO> listarMemorandos() {
+		
+		return null;
+	}
+
+}

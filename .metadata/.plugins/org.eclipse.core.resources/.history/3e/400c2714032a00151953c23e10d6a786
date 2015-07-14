@@ -1,0 +1,66 @@
+package dao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.MemorandoDTO;
+import beans.TallerMecanicoDTO;
+import interfaces.MemorandoDAO;
+
+public class MySqlMemorandoDAO implements MemorandoDAO {
+
+	@Override
+	public List<MemorandoDTO> listarMemorandosRequerimientoVehicular() {
+		List<MemorandoDTO> data = new ArrayList<MemorandoDTO>();
+		MemorandoDTO m = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()){
+				
+				data.add(m);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public List<MemorandoDTO> listarMemorandosReparacionVehicular() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int registrarMemorando(MemorandoDTO m) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int revisarMemorando(int idMemorando) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+}

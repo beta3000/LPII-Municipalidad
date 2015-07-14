@@ -1,0 +1,12 @@
+package beans;
+
+public class MemorandoDTO {
+	private int idMemorando;
+	private String fechaMemorando;
+	private String contenidoMemorando;
+	private int idAsuntoMemorando;
+	private String descripcionAsuntoMemorando;
+	private int idEstadoMemorando;
+	private String descripcionEstadoMemorando;
+	private int idUsuarioRemitente;
+}

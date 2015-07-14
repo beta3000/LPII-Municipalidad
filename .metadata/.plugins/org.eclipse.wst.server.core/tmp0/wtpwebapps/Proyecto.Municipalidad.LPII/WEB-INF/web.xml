@@ -50,4 +50,14 @@
     <servlet-name>ServletCerrar</servlet-name>
     <url-pattern>/ServletCerrar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MantenimientoMemorando</display-name>
+    <servlet-name>MantenimientoMemorando</servlet-name>
+    <servlet-class>misServlets.MantenimientoMemorando</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MantenimientoMemorando</servlet-name>
+    <url-pattern>/MantenimientoMemorando</url-pattern>
+  </servlet-mapping>
 </web-app>
