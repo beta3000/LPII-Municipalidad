@@ -35,13 +35,13 @@
           <div class="form-group">
             <label for="inputNombre" class="col-sm-3 control-label">Nombre</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="txtNombre">
+              <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="txtNombre" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDireccion" class="col-sm-3 control-label">Direccion</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion" name="txtDireccion">
+              <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion" name="txtDireccion" required>
             </div>
           </div>
           <div class="form-group">
@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="inputTelefono" class="col-sm-3 control-label">Teléfono</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono">
+              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" required>
             </div>
           </div>
           <div class="form-group">

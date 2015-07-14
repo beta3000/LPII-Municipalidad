@@ -81,7 +81,7 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("  </head>\r\n");
       out.write("  <body>\r\n");
       out.write("    ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "sesion.jsp", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "a-sesion.jsp", out, false);
       out.write("\r\n");
       out.write("<!-- Inicio Barra de navegación -->\r\n");
       out.write("    <div class=\"container-fluid\">\r\n");
@@ -106,17 +106,17 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("                  MEMORANDOS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-memorandos-1-listado.jsp\">Requerimiento de Vehículos y Choferes</a></li>\r\n");
-      out.write("                  <li><a href=\"a-memorandos-2-listado.jsp\">Mantenimiento de Vehículos</a></li>\r\n");
+      out.write("                  <li><a href=\"a-memorandos-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"a-memorandos-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
       out.write("                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n");
-      out.write("                  SOLICITUDES<b class=\"caret\"></b>\r\n");
+      out.write("                  CRONOGRAMAS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-solicitudes-1-listado.jsp\">Requerimiento de Vehículos y Choferes</a></li>\r\n");
-      out.write("                  <li><a href=\"a-solicitudes-2-listado.jsp\">Mantenimiento de Vehículos</a></li>\r\n");
+      out.write("                  <li><a href=\"a-cronogramas-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"a-cronogramas-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
@@ -124,9 +124,8 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("                  INFORMES<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-informes-1-listado.jsp\">Requerimiento de Vehículos y Choferes</a></li>\r\n");
-      out.write("                  <li><a href=\"a-informes-2-listado.jsp\">Mantenimiento de Vehículos</a></li>\r\n");
-      out.write("                  <li><a href=\"a-informes-3-listado.jsp\">Reparación Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"a-informes-1-listado.jsp\">Servicio Vehicular</a></li>\r\n");
+      out.write("                   <li><a href=\"a-informes-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
@@ -181,37 +180,37 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputNombres\" class=\"col-sm-3 control-label\">Nombres</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputNombres\" placeholder=\"Nombres\" name=\"txtNombres\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputNombres\" placeholder=\"Nombres\" name=\"txtNombres\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputApellidoPaterno\" class=\"col-sm-3 control-label\">Apellido Paterno</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputApellidoPaterno\" placeholder=\"Apellido Paterno\" name=\"txtApellidoPaterno\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputApellidoPaterno\" placeholder=\"Apellido Paterno\" name=\"txtApellidoPaterno\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputApellidoMaterno\" class=\"col-sm-3 control-label\">Apellido Materno</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputApellidoMaterno\" placeholder=\"Apellido Materno\" name=\"txtApellidoMaterno\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputApellidoMaterno\" placeholder=\"Apellido Materno\" name=\"txtApellidoMaterno\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputfechaNacimiento\" class=\"col-sm-3 control-label\">Fecha Nacimiento</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"date\" class=\"form-control\" id=\"inputfechaNacimiento\" name=\"txtFecha\">\r\n");
+      out.write("              <input type=\"date\" class=\"form-control\" id=\"inputfechaNacimiento\" name=\"txtFecha\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputDNI\" class=\"col-sm-3 control-label\">DNI</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputDNI\" placeholder=\"DNI\" name=\"txtDNI\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputDNI\" placeholder=\"DNI\" name=\"txtDNI\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputCorreo\" class=\"col-sm-3 control-label\">Correo</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"email\" class=\"form-control\" id=\"inputCorreo\" placeholder=\"Correo\" name=\"txtCorreo\">\r\n");
+      out.write("              <input type=\"email\" class=\"form-control\" id=\"inputCorreo\" placeholder=\"Correo\" name=\"txtCorreo\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
@@ -235,29 +234,27 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       out.write("            <label for=\"selectSexo\" class=\"col-sm-3 control-label\">Sexo</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
       out.write("              <select name=\"selectSexo\" id=\"selectSexo\" class=\"form-control\">\r\n");
-      out.write("                ");
-      if (_jspx_meth_ct_005fcboDinamico_005f1(_jspx_page_context))
-        return;
-      out.write("\r\n");
+      out.write("                <option value=\"Masculino\">Masculino</option>\r\n");
+      out.write("                <option value=\"Femenino\">Femenino</option>\r\n");
       out.write("            </select>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputTelefono\" class=\"col-sm-3 control-label\">Teléfono</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputTelefono\" placeholder=\"Teléfono\" name=\"txtTelefono\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputTelefono\" placeholder=\"Teléfono\" name=\"txtTelefono\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputLogin\" class=\"col-sm-3 control-label\">Login</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputLogin\" placeholder=\"Login\" name=\"txtLogin\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputLogin\" placeholder=\"Login\" name=\"txtLogin\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputPassword\" class=\"col-sm-3 control-label\">Password</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputPassword\" placeholder=\"Password\" name=\"txtPassword\">\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputPassword\" placeholder=\"Password\" name=\"txtPassword\" required>\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");
@@ -307,27 +304,6 @@ public final class a_002dadministradores_002dnuevo_jsp extends org.apache.jasper
       return true;
     }
     _005fjspx_005ftagPool_005fct_005fcboDinamico_0026_005fsql_005fnombre_005fnobody.reuse(_jspx_th_ct_005fcboDinamico_005f0);
-    return false;
-  }
-
-  private boolean _jspx_meth_ct_005fcboDinamico_005f1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  ct:cboDinamico
-    etiquetas.ComboDinamico _jspx_th_ct_005fcboDinamico_005f1 = (etiquetas.ComboDinamico) _005fjspx_005ftagPool_005fct_005fcboDinamico_0026_005fsql_005fnombre_005fnobody.get(etiquetas.ComboDinamico.class);
-    _jspx_th_ct_005fcboDinamico_005f1.setPageContext(_jspx_page_context);
-    _jspx_th_ct_005fcboDinamico_005f1.setParent(null);
-    // /a-administradores-nuevo.jsp(89,16) name = sql type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_ct_005fcboDinamico_005f1.setSql("SQL_SEXO");
-    // /a-administradores-nuevo.jsp(89,16) name = nombre type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_ct_005fcboDinamico_005f1.setNombre("cboSexo");
-    int _jspx_eval_ct_005fcboDinamico_005f1 = _jspx_th_ct_005fcboDinamico_005f1.doStartTag();
-    if (_jspx_th_ct_005fcboDinamico_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fct_005fcboDinamico_0026_005fsql_005fnombre_005fnobody.reuse(_jspx_th_ct_005fcboDinamico_005f1);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fct_005fcboDinamico_0026_005fsql_005fnombre_005fnobody.reuse(_jspx_th_ct_005fcboDinamico_005f1);
     return false;
   }
 }

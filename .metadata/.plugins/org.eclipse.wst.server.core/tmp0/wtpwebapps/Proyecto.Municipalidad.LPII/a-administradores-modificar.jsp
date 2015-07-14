@@ -35,43 +35,43 @@
           <div class="form-group">
             <label for="inputNombres" class="col-sm-3 control-label">Nombres</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" name="txtNombres" value="${requestScope.usuarioAdministrador.nombresUsuario}">
+              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" name="txtNombres" value="${requestScope.usuarioAdministrador.nombresUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoPaterno" class="col-sm-3 control-label">Apellido Paterno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno" name="txtApellidoPaterno" value="${requestScope.usuarioAdministrador.apellidoPaternoUsuario}">
+              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno" name="txtApellidoPaterno" value="${requestScope.usuarioAdministrador.apellidoPaternoUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoMaterno" class="col-sm-3 control-label">Apellido Materno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno" name="txtApellidoMaterno" value="${requestScope.usuarioAdministrador.apellidoMaternoUsuario}">
+              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno" name="txtApellidoMaterno" value="${requestScope.usuarioAdministrador.apellidoMaternoUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputfechaNacimiento" class="col-sm-3 control-label">Fecha Nacimiento</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="inputfechaNacimiento" name="txtFecha" value="${requestScope.usuarioAdministrador.fechaNacimientoUsuario}">
+              <input type="date" class="form-control" id="inputfechaNacimiento" name="txtFecha" value="${requestScope.usuarioAdministrador.fechaNacimientoUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDNI" class="col-sm-3 control-label">DNI</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="txtDNI" value="${requestScope.usuarioAdministrador.dniUsuario}">
+              <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="txtDNI" value="${requestScope.usuarioAdministrador.dniUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputCorreo" class="col-sm-3 control-label">Correo</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" name="txtCorreo" value="${requestScope.usuarioAdministrador.correoUsuario}">
+              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" name="txtCorreo" value="${requestScope.usuarioAdministrador.correoUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDireccion" class="col-sm-3 control-label">Dirección</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" name="txtDireccion" value="${requestScope.usuarioAdministrador.direccionUsuario}">
+              <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" name="txtDireccion" value="${requestScope.usuarioAdministrador.direccionUsuario}" required>
             </div>
           </div>
           <div class="form-group">
@@ -86,26 +86,27 @@
             <label for="selectSexo" class="col-sm-3 control-label">Sexo</label>
             <div class="col-sm-5">
               <select name="selectSexo" id="selectSexo" class="form-control">
-                <ct:cboDinamico sql="SQL_SEXO" nombre="cboSexo" valor="${requestScope.usuarioAdministrador.idSexo}"></ct:cboDinamico>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
             </select>
             </div>
           </div>
           <div class="form-group">
             <label for="inputTelefono" class="col-sm-3 control-label">Teléfono</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" value="${requestScope.usuarioAdministrador.telefonoUsuario}">
+              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" value="${requestScope.usuarioAdministrador.telefonoUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputLogin" class="col-sm-3 control-label">Login</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputLogin" placeholder="Login" name="txtLogin" value="${requestScope.usuarioAdministrador.loginUsuario}">
+              <input type="text" class="form-control" id="inputLogin" placeholder="Login" name="txtLogin" value="${requestScope.usuarioAdministrador.loginUsuario}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="txtPassword" value="${requestScope.usuarioAdministrador.passwordUsuario}">
+              <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="txtPassword" value="${requestScope.usuarioAdministrador.passwordUsuario}" required>
             </div>
           </div>
           <div class="form-group">

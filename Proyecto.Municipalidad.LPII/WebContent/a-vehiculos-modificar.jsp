@@ -35,25 +35,25 @@
           <div class="form-group">
             <label for="inputPlaca" class="col-sm-3 control-label">Placa</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPlaca" placeholder="Placa" name="txtPlaca" value="${requestScope.vehiculo.placaVehiculo}">
+              <input type="text" class="form-control" id="inputPlaca" placeholder="Placa" name="txtPlaca" value="${requestScope.vehiculo.placaVehiculo}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputMarca" class="col-sm-3 control-label">Marca</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputMarca" placeholder="Marca" name="txtMarca" value="${requestScope.vehiculo.marcaVehiculo}">
+              <input type="text" class="form-control" id="inputMarca" placeholder="Marca" name="txtMarca" value="${requestScope.vehiculo.marcaVehiculo}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputModelo" class="col-sm-3 control-label">Modelo</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" name="txtModelo" value="${requestScope.vehiculo.modeloVehiculo}">
+              <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" name="txtModelo" value="${requestScope.vehiculo.modeloVehiculo}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputAño" class="col-sm-3 control-label">Año</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputAño" placeholder="Año" name="txtAnio" value="${requestScope.vehiculo.anioFabricacionVehiculo}">
+              <input type="text" class="form-control" id="inputAño" placeholder="Año" name="txtAnio" value="${requestScope.vehiculo.anioFabricacionVehiculo}" required>
             </div>
           </div>
           <div class="form-group">

@@ -23,14 +23,13 @@
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Lista de Vehículos</h1>
-        <p>En la siguiente lista se muestran los Vehículos registrados en el Sistema.</p>
-        <a href="a-vehiculos-nuevo.jsp">
+        <h1 class="text-left">Lista de Vehículos <a href="a-vehiculos-nuevo.jsp">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-plus"></span>
                   Agregar Nuevo
                 </button>
-        </a>
+        </a></h1>
+        <p>En la siguiente lista se muestran los Vehículos registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->

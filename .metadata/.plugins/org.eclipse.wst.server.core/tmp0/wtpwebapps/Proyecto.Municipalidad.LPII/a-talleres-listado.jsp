@@ -23,14 +23,13 @@
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Lista de Talleres Mecánicos</h1>
-        <p>En la siguiente lista se muestran los Talleres Mecánicos registrados en el Sistema.</p>
-        <a href="a-talleres-nuevo.jsp">
+        <h1 class="text-left">Lista de Talleres Mecánicos <a href="a-talleres-nuevo.jsp">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-plus"></span>
                   Agregar Nuevo
                 </button>
-        </a>
+        </a></h1>
+        <p>En la siguiente lista se muestran los Talleres Mecánicos registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->

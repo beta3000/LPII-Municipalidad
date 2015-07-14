@@ -86,7 +86,8 @@
             <label for="selectSexo" class="col-sm-3 control-label">Sexo</label>
             <div class="col-sm-5">
               <select name="selectSexo" id="selectSexo" class="form-control">
-                <ct:cboDinamico sql="SQL_SEXO" nombre="cboSexo"></ct:cboDinamico>
+                <option value="Masculino">Masculino</option>
+                <option value="Masculino">Femenino</option>
             </select>
             </div>
           </div>

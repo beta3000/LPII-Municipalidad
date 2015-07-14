@@ -24,14 +24,13 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			cn = MySqlDBConexion.getConexion();
 			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
 					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
-					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.sexousuario,u.loginUsuario,u.passwordUsuario,"
 					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
-					+ "u.idSexo,s.descripcionSexo,u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idAreaMunicipal,am.nombreAreaMunicipal,"
 					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
 					+ "from Usuario as u inner join TipoUsuario as tu "
 					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
-					+ "on u.idDistrito = d.idDistrito inner join Sexo as s "
-					+ "on u.idSexo = s.idSexo inner join AreaMunicipal as am "
+					+ "on u.idDistrito = d.idDistrito inner join AreaMunicipal as am "
 					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
 					+ "on u.idEstadoUsuario = eu.idEstadoUsuario";
 			pstm = cn.prepareStatement(sql);
@@ -47,18 +46,17 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 				u.setCorreoUsuario(rs.getString(7));
 				u.setTelefonoUsuario(rs.getString(8));
 				u.setDniUsuario(rs.getInt(9));
-				u.setLoginUsuario(rs.getString(10));
-				u.setPasswordUsuario(rs.getString(11));
-				u.setIdTipoUsuario(rs.getInt(12));
-				u.setDescripcionTipoUsuario(rs.getString(13));
-				u.setIdDistrito(rs.getInt(14));
-				u.setNombreDistrito(rs.getString(15));
-				u.setIdSexo(rs.getInt(16));
-				u.setDescripcionSexo(rs.getString(17));
-				u.setIdAreaMunicipal(rs.getInt(18));
-				u.setNombreAreaMunicipal(rs.getString(19));
-				u.setIdEstadoUsuario(rs.getInt(20));
-				u.setDescripcionEstadoUsuario(rs.getString(21));
+				u.setSexousuario(rs.getString(10));
+				u.setLoginUsuario(rs.getString(11));
+				u.setPasswordUsuario(rs.getString(12));
+				u.setIdTipoUsuario(rs.getInt(13));
+				u.setDescripcionTipoUsuario(rs.getString(14));
+				u.setIdDistrito(rs.getInt(15));
+				u.setNombreDistrito(rs.getString(16));
+				u.setIdAreaMunicipal(rs.getInt(17));
+				u.setNombreAreaMunicipal(rs.getString(18));
+				u.setIdEstadoUsuario(rs.getInt(19));
+				u.setDescripcionEstadoUsuario(rs.getString(20));
 				data.add(u);				
 			}
 		} catch (Exception e) {
@@ -83,7 +81,7 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 		String sql ="";
 		try {
 			cn = MySqlDBConexion.getConexion();
-			sql = "insert into usuario values(null,?,?,?,?,?,?,?,?,?,?,1,?,?,1,1)";
+			sql = "insert into usuario values(null,?,?,?,?,?,?,?,?,?,?,?,1,?,1,1)";
 			pstm = cn.prepareStatement(sql);
 			pstm.setString(1, u.getNombresUsuario());
 			pstm.setString(2, u.getApellidoPaternoUsuario());
@@ -93,10 +91,10 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			pstm.setString(6, u.getCorreoUsuario());
 			pstm.setString(7, u.getTelefonoUsuario());
 			pstm.setInt(8, u.getDniUsuario());
-			pstm.setString(9, u.getLoginUsuario());
-			pstm.setString(10, u.getPasswordUsuario());
-			pstm.setInt(11, u.getIdDistrito());
-			pstm.setInt(12, u.getIdSexo());
+			pstm.setString(9, u.getSexousuario());
+			pstm.setString(10, u.getLoginUsuario());
+			pstm.setString(11, u.getPasswordUsuario());
+			pstm.setInt(12, u.getIdDistrito());
 			estado = pstm.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -122,14 +120,13 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			cn = MySqlDBConexion.getConexion();
 			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
 					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
-					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.sexousuario,u.loginUsuario,u.passwordUsuario,"
 					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
-					+ "u.idSexo,s.descripcionSexo,u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idAreaMunicipal,am.nombreAreaMunicipal,"
 					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
 					+ "from Usuario as u inner join TipoUsuario as tu "
 					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
-					+ "on u.idDistrito = d.idDistrito inner join Sexo as s "
-					+ "on u.idSexo = s.idSexo inner join AreaMunicipal as am "
+					+ "on u.idDistrito = d.idDistrito inner join AreaMunicipal as am "
 					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
 					+ "on u.idEstadoUsuario = eu.idEstadoUsuario "
 					+ "where u.idUsuario = ?";
@@ -147,18 +144,17 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 				u.setCorreoUsuario(rs.getString(7));
 				u.setTelefonoUsuario(rs.getString(8));
 				u.setDniUsuario(rs.getInt(9));
-				u.setLoginUsuario(rs.getString(10));
-				u.setPasswordUsuario(rs.getString(11));
-				u.setIdTipoUsuario(rs.getInt(12));
-				u.setDescripcionTipoUsuario(rs.getString(13));
-				u.setIdDistrito(rs.getInt(14));
-				u.setNombreDistrito(rs.getString(15));
-				u.setIdSexo(rs.getInt(16));
-				u.setDescripcionSexo(rs.getString(17));
-				u.setIdAreaMunicipal(rs.getInt(18));
-				u.setNombreAreaMunicipal(rs.getString(19));
-				u.setIdEstadoUsuario(rs.getInt(20));
-				u.setDescripcionEstadoUsuario(rs.getString(21));				
+				u.setSexousuario(rs.getString(10));
+				u.setLoginUsuario(rs.getString(11));
+				u.setPasswordUsuario(rs.getString(12));
+				u.setIdTipoUsuario(rs.getInt(13));
+				u.setDescripcionTipoUsuario(rs.getString(14));
+				u.setIdDistrito(rs.getInt(15));
+				u.setNombreDistrito(rs.getString(16));
+				u.setIdAreaMunicipal(rs.getInt(17));
+				u.setNombreAreaMunicipal(rs.getString(18));
+				u.setIdEstadoUsuario(rs.getInt(19));
+				u.setDescripcionEstadoUsuario(rs.getString(20));				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -186,8 +182,8 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			sql = "update usuario "
 					+ "set nombresUsuario = ?, apellidoPaternoUsuario=?, apellidoMaternoUsuario=?, "
 					+ "fechaNacimientoUsuario=?,direccionUsuario=?,correoUsuario=?,telefonoUsuario=?, "
-					+ "dniUsuario=?,loginUsuario=?,passwordUsuario=?,idTipoUsuario=1,idDistrito=?, "
-					+ "idSexo=?, idAreaMunicipal=1,idEstadoUsuario=1 "
+					+ "dniUsuario=?,sexoUsuario?,loginUsuario=?,passwordUsuario=?,idTipoUsuario=1,idDistrito=?, "
+					+ "idAreaMunicipal=1,idEstadoUsuario=1 "
 					+ "where idUsuario = ?";
 			pstm = cn.prepareStatement(sql);
 			pstm.setString(1, u.getNombresUsuario());
@@ -198,10 +194,10 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 			pstm.setString(5, u.getCorreoUsuario());
 			pstm.setString(6, u.getTelefonoUsuario());
 			pstm.setInt(7, u.getDniUsuario());
-			pstm.setString(8, u.getLoginUsuario());
-			pstm.setString(9, u.getPasswordUsuario());
-			pstm.setInt(10, u.getIdDistrito());
-			pstm.setInt(11, u.getIdSexo());
+			pstm.setString(8, u.getSexousuario());
+			pstm.setString(9, u.getLoginUsuario());
+			pstm.setString(10, u.getPasswordUsuario());
+			pstm.setInt(11, u.getIdDistrito());
 			pstm.setInt(12, u.getIdUsuario());
 			estado = pstm.executeUpdate();
 
@@ -285,6 +281,242 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 		}
 		return obj;
 
+	}
+
+	@Override
+	public List<UsuarioDTO> listarUsuariosEmpleados() {
+		List<UsuarioDTO> data = new ArrayList<UsuarioDTO>();
+		UsuarioDTO u = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
+					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.sexousuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
+					+ "u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
+					+ "from Usuario as u inner join TipoUsuario as tu "
+					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
+					+ "on u.idDistrito = d.idDistrito inner join AreaMunicipal as am "
+					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
+					+ "on u.idEstadoUsuario = eu.idEstadoUsuario";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			while(rs.next()){
+				u = new UsuarioDTO();
+				u.setIdUsuario(rs.getInt(1));
+				u.setNombresUsuario(rs.getString(2));
+				u.setApellidoPaternoUsuario(rs.getString(3));
+				u.setApellidoMaternoUsuario(rs.getString(4));
+				u.setFechaNacimientoUsuario(rs.getString(5));
+				u.setDireccionUsuario(rs.getString(6));
+				u.setCorreoUsuario(rs.getString(7));
+				u.setTelefonoUsuario(rs.getString(8));
+				u.setDniUsuario(rs.getInt(9));
+				u.setSexousuario(rs.getString(10));
+				u.setLoginUsuario(rs.getString(11));
+				u.setPasswordUsuario(rs.getString(12));
+				u.setIdTipoUsuario(rs.getInt(13));
+				u.setDescripcionTipoUsuario(rs.getString(14));
+				u.setIdDistrito(rs.getInt(15));
+				u.setNombreDistrito(rs.getString(16));
+				u.setIdAreaMunicipal(rs.getInt(17));
+				u.setNombreAreaMunicipal(rs.getString(18));
+				u.setIdEstadoUsuario(rs.getInt(19));
+				u.setDescripcionEstadoUsuario(rs.getString(20));
+				data.add(u);				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public int registrarUsuarioEmpleado(UsuarioDTO u) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql ="";
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "insert into usuario values(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, u.getNombresUsuario());
+			pstm.setString(2, u.getApellidoPaternoUsuario());
+			pstm.setString(3, u.getApellidoMaternoUsuario());
+			pstm.setString(4, u.getFechaNacimientoUsuario());
+			pstm.setString(5, u.getDireccionUsuario());
+			pstm.setString(6, u.getCorreoUsuario());
+			pstm.setString(7, u.getTelefonoUsuario());
+			pstm.setInt(8, u.getDniUsuario());
+			pstm.setString(9, u.getSexousuario());
+			pstm.setString(10, u.getLoginUsuario());
+			pstm.setString(11, u.getPasswordUsuario());
+			pstm.setInt(12, u.getIdTipoUsuario());
+			pstm.setInt(13, u.getIdDistrito());
+			pstm.setInt(14, u.getIdAreaMunicipal());
+			pstm.setInt(15, u.getIdEstadoUsuario());
+			estado = pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}		
+		return estado;
+	}
+
+	@Override
+	public UsuarioDTO buscarUsuarioempleado(int idUsuario) {
+		UsuarioDTO u = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select u.idUsuario,u.nombresUsuario,u.apellidoPaternoUsuario,u.apellidoMaternoUsuario,"
+					+ "u.fechaNacimientoUsuario,u.direccionUsuario,"
+					+ "u.correoUsuario, u.telefonoUsuario,u.dniUsuario,u.sexousuario,u.loginUsuario,u.passwordUsuario,"
+					+ "u.idTipoUsuario,tu.descripcionTipoUsuario,u.idDistrito,d.nombreDistrito,"
+					+ "u.idAreaMunicipal,am.nombreAreaMunicipal,"
+					+ "u.idEstadoUsuario,eu.descripcionEstadoUsuario "
+					+ "from Usuario as u inner join TipoUsuario as tu "
+					+ "on u.idTipoUsuario = tu.idtipoUsuario inner join Distrito as d "
+					+ "on u.idDistrito = d.idDistrito inner join AreaMunicipal as am "
+					+ "on u.idAreaMunicipal = am.idAreaMunicipal inner join EstadoUsuario as eu "
+					+ "on u.idEstadoUsuario = eu.idEstadoUsuario "
+					+ "where u.idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idUsuario);
+			rs = pstm.executeQuery();
+			if(rs.next()){
+				u = new UsuarioDTO();
+				u.setIdUsuario(rs.getInt(1));
+				u.setNombresUsuario(rs.getString(2));
+				u.setApellidoPaternoUsuario(rs.getString(3));
+				u.setApellidoMaternoUsuario(rs.getString(4));
+				u.setFechaNacimientoUsuario(rs.getString(5));
+				u.setDireccionUsuario(rs.getString(6));
+				u.setCorreoUsuario(rs.getString(7));
+				u.setTelefonoUsuario(rs.getString(8));
+				u.setDniUsuario(rs.getInt(9));
+				u.setSexousuario(rs.getString(10));
+				u.setLoginUsuario(rs.getString(11));
+				u.setPasswordUsuario(rs.getString(12));
+				u.setIdTipoUsuario(rs.getInt(13));
+				u.setDescripcionTipoUsuario(rs.getString(14));
+				u.setIdDistrito(rs.getInt(15));
+				u.setNombreDistrito(rs.getString(16));
+				u.setIdAreaMunicipal(rs.getInt(17));
+				u.setNombreAreaMunicipal(rs.getString(18));
+				u.setIdEstadoUsuario(rs.getInt(19));
+				u.setDescripcionEstadoUsuario(rs.getString(20));				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return u;
+	}
+
+	@Override
+	public int modificarUsuarioEmpleado(UsuarioDTO u) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "update usuario "
+					+ "set nombresUsuario = ?, apellidoPaternoUsuario=?, apellidoMaternoUsuario=?, "
+					+ "fechaNacimientoUsuario=?,direccionUsuario=?,correoUsuario=?,telefonoUsuario=?, "
+					+ "dniUsuario=?,sexoUsuario?,loginUsuario=?,passwordUsuario=?,idTipoUsuario=?,idDistrito=?, "
+					+ "idAreaMunicipal=?,idEstadoUsuario=? "
+					+ "where idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setString(1, u.getNombresUsuario());
+			pstm.setString(2, u.getApellidoPaternoUsuario());
+			pstm.setString(3, u.getApellidoMaternoUsuario());
+			pstm.setString(4, u.getFechaNacimientoUsuario());
+			pstm.setString(5, u.getDireccionUsuario());
+			pstm.setString(5, u.getCorreoUsuario());
+			pstm.setString(6, u.getTelefonoUsuario());
+			pstm.setInt(7, u.getDniUsuario());
+			pstm.setString(8, u.getSexousuario());
+			pstm.setString(9, u.getLoginUsuario());
+			pstm.setString(10, u.getPasswordUsuario());
+			pstm.setInt(11, u.getIdTipoUsuario());
+			pstm.setInt(12, u.getIdDistrito());
+			pstm.setInt(13, u.getIdAreaMunicipal());
+			pstm.setInt(14, u.getIdEstadoUsuario());
+			pstm.setInt(15, u.getIdUsuario());
+			estado = pstm.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
+	}
+
+	@Override
+	public int eliminarUsuarioEmpleado(int idUsuario) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "delete from usuario "
+					+ "where idUsuario = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idUsuario);
+			estado = pstm.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
 	}
 
 }

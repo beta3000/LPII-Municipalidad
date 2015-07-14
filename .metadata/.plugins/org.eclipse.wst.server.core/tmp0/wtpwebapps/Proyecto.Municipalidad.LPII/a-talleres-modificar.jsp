@@ -35,13 +35,13 @@
           <div class="form-group">
             <label for="inputNombre" class="col-sm-3 control-label">Nombre</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="txtNombre" value="${requestScope.tallerMecanico.nombreTallerMecanico}">
+              <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="txtNombre" value="${requestScope.tallerMecanico.nombreTallerMecanico}" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDireccion" class="col-sm-3 control-label">Direccion</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion" name="txtDireccion" value="${requestScope.tallerMecanico.direccionTallerMecanico}">
+              <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion" name="txtDireccion" value="${requestScope.tallerMecanico.direccionTallerMecanico}" required>
             </div>
           </div>
           <div class="form-group">
@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="inputTelefono" class="col-sm-3 control-label">Teléfono</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" value="${requestScope.tallerMecanico.telefonoTallerMecanico}">
+              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" value="${requestScope.tallerMecanico.telefonoTallerMecanico}" required>
             </div>
           </div>
           <div class="form-group">

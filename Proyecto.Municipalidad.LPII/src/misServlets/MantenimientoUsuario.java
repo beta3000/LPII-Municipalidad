@@ -45,7 +45,16 @@ public class MantenimientoUsuario extends HttpServlet {
 			eliminarAdministrador(request,response);
 		}else if(tipo.equals("sesion")){
 			sesion(request,response);
+		}else if(tipo.equals("listarEmpleado")){
+			listarEmpleado(request,response);
 		}
+	}
+
+	private void listarEmpleado(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("listaEmpleados", m.listaUsuariosEmpleados());
+		request.getRequestDispatcher("a-empleados-listado.jsp").forward(request, response);
+		
 	}
 
 	private void sesion(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -97,7 +106,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		String login = request.getParameter("txtLogin");
 		String password = request.getParameter("txtPassword");
 		int idDistrito = Integer.parseInt(request.getParameter("selectDistrito"));
-		int idSexo = Integer.parseInt(request.getParameter("selectSexo"));
+		String sexo = request.getParameter("selectSexo");
 		UsuarioDTO u = new UsuarioDTO();
 		u.setIdUsuario(idUsuarioAdministrador);
 		u.setNombresUsuario(nombres);
@@ -111,7 +120,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		u.setLoginUsuario(login);
 		u.setPasswordUsuario(password);
 		u.setIdDistrito(idDistrito);
-		u.setIdSexo(idSexo);
+		u.setSexousuario(sexo);
 		estado = m.modificaUsuarioAdministrador(u);
 		
 		if(estado == 1){
@@ -149,7 +158,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		String login = request.getParameter("txtLogin");
 		String password = request.getParameter("txtPassword");
 		int idDistrito = Integer.parseInt(request.getParameter("selectDistrito"));
-		int idSexo = Integer.parseInt(request.getParameter("selectSexo"));
+		String sexo = request.getParameter("selectSexo");
 		UsuarioDTO u = new UsuarioDTO();
 		u.setNombresUsuario(nombres);
 		u.setApellidoPaternoUsuario(apPaterno);
@@ -162,7 +171,7 @@ public class MantenimientoUsuario extends HttpServlet {
 		u.setLoginUsuario(login);
 		u.setPasswordUsuario(password);
 		u.setIdDistrito(idDistrito);
-		u.setIdSexo(idSexo);
+		u.setSexousuario(sexo);
 		estado = m.registraUsuarioAdministrador(u);
 		
 		if(estado == 1){

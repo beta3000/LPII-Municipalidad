@@ -16,6 +16,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- DataTables -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables_themeroller.min.css">
   </head>
   <body>
    <%@include file="a-menu.jsp" %>
@@ -36,15 +39,17 @@
     <div class="container">
       <div class="row">
         <h2 class="text-center">Últimos Comentarios</h2>
-        <table class="table table-bordered table-hover">
-          <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Tipo</th>
-            <th>Fecha</th>
-            <th>Comentario</th>
-            <th>Operación</th>
-          </tr>
+        <table id="tabla" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Tipo</th>
+              <th>Fecha</th>
+              <th>Comentario</th>
+              <th>Operación</th>
+            </tr>
+          </thead>  
           <tr>
             <td>1</td>
             <td>Andres</td>
@@ -158,5 +163,8 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/misFunciones.js"></script>
   </body>
 </html>

@@ -34,31 +34,31 @@
           <div class="form-group">
             <label for="inputPlaca" class="col-sm-3 control-label">Placa</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPlaca" placeholder="Placa" name="txtPlaca">
+              <input type="text" class="form-control" id="inputPlaca" placeholder="Placa" name="txtPlaca" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputMarca" class="col-sm-3 control-label">Marca</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputMarca" placeholder="Marca" name="txtMarca">
+              <input type="text" class="form-control" id="inputMarca" placeholder="Marca" name="txtMarca" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputModelo" class="col-sm-3 control-label">Modelo</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" name="txtModelo">
+              <input type="text" class="form-control" id="inputModelo" placeholder="Modelo" name="txtModelo" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputAño" class="col-sm-3 control-label">Año</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputAño" placeholder="Año" name="txtAnio">
+              <input type="text" class="form-control" id="inputAño" placeholder="Año" name="txtAnio" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputColor" class="col-sm-3 control-label">Color</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputColor" placeholder="Color" name="txtColor">
+              <input type="text" class="form-control" id="inputColor" placeholder="Color" name="txtColor" required>
             </div>
           </div>
           <div class="form-group">

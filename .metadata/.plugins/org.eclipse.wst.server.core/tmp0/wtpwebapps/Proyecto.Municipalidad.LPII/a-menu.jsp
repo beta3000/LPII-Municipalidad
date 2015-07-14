@@ -1,4 +1,4 @@
-<jsp:include page="sesion.jsp"/>
+<jsp:include page="a-sesion.jsp"/>
 <!-- Inicio Barra de navegación -->
     <div class="container-fluid">
       <div class="row">
@@ -22,17 +22,17 @@
                   MEMORANDOS<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-memorandos-1-listado.jsp">Requerimiento de Vehículos y Choferes</a></li>
-                  <li><a href="a-memorandos-2-listado.jsp">Mantenimiento de Vehículos</a></li>
+                  <li><a href="a-memorandos-1-listado.jsp">Requerimiento Vehicular</a></li>
+                  <li><a href="a-memorandos-2-listado.jsp">Reparación Vehicular</a></li>
                 </ul>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  SOLICITUDES<b class="caret"></b>
+                  CRONOGRAMAS<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-solicitudes-1-listado.jsp">Requerimiento de Vehículos y Choferes</a></li>
-                  <li><a href="a-solicitudes-2-listado.jsp">Mantenimiento de Vehículos</a></li>
+                  <li><a href="a-cronogramas-1-listado.jsp">Requerimiento Vehicular</a></li>
+                  <li><a href="a-cronogramas-2-listado.jsp">Reparación Vehicular</a></li>
                 </ul>
               </li>
               <li class="dropdown">
@@ -40,9 +40,8 @@
                   INFORMES<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-informes-1-listado.jsp">Requerimiento de Vehículos y Choferes</a></li>
-                  <li><a href="a-informes-2-listado.jsp">Mantenimiento de Vehículos</a></li>
-                  <li><a href="a-informes-3-listado.jsp">Reparación Vehicular</a></li>
+                  <li><a href="a-informes-1-listado.jsp">Servicio Vehicular</a></li>
+                   <li><a href="a-informes-2-listado.jsp">Reparación Vehicular</a></li>
                 </ul>
               </li>
               <li class="dropdown">

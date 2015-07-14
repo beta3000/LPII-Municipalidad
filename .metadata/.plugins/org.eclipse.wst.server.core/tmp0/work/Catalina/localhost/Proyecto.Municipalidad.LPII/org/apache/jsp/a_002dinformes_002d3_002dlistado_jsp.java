@@ -75,7 +75,7 @@ public final class a_002dinformes_002d3_002dlistado_jsp extends org.apache.jaspe
       out.write("  </head>\r\n");
       out.write("  <body>\r\n");
       out.write("    ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "sesion.jsp", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "a-sesion.jsp", out, false);
       out.write("\r\n");
       out.write("<!-- Inicio Barra de navegación -->\r\n");
       out.write("    <div class=\"container-fluid\">\r\n");
@@ -106,11 +106,11 @@ public final class a_002dinformes_002d3_002dlistado_jsp extends org.apache.jaspe
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
       out.write("                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n");
-      out.write("                  SOLICITUDES<b class=\"caret\"></b>\r\n");
+      out.write("                  CRONOGRAMAS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-solicitudes-1-listado.jsp\">Requerimiento de Vehículos y Choferes</a></li>\r\n");
-      out.write("                  <li><a href=\"a-solicitudes-2-listado.jsp\">Mantenimiento de Vehículos</a></li>\r\n");
+      out.write("                  <li><a href=\"a-cronogramas-1-listado.jsp\">Requerimiento de Vehículos y Choferes</a></li>\r\n");
+      out.write("                  <li><a href=\"a-cronogramas-2-listado.jsp\">Mantenimiento de Vehículos</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");

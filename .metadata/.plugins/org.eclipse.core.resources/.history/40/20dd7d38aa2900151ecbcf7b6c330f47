@@ -1,0 +1,28 @@
+package beans;
+
+public class UsuarioDTO {
+
+	private int idUsuario;
+	private String nombresUsuario;
+	private String apellidoPaternoUsuario;
+	private String apellidoMaternoUsuario;
+	private String fechaNacimientoUsuario;
+	private String direccionUsuario;
+	private String correoUsuario;
+	private String telefonoUsuario;
+	private int dniUsuario;
+	private String loginUsuario;
+	private String passwordUsuario;
+	private int idTipoUsuario;
+	private String descripcionTipoUsuario;
+	private int idDistrito;
+	private String nombreDistrito;
+	private String sexousuario;
+	private int idAreaMunicipal;
+	private String nombreAreaMunicipal;
+	private int idEstadoUsuario;
+	private String descripcionEstadoUsuario;
+	
+	
+	
+}

@@ -27,12 +27,22 @@ public class ManteUsuarioService {
 	public int eliminaUsuarioAdministrador(int idUsuario){
 		return objUsuario.eliminarUsuarioAdministrador(idUsuario);
 	}
-	
-	/*public EmpleadoDTO iniciaSesion(String login){
-		return obj.iniciarSesion(login);
-	}*/
-	
 	public UsuarioDTO iniciaSesion(String login){
 		return objUsuario.iniciarSesion(login);
+	}
+	public List<UsuarioDTO> listaUsuariosEmpleados(){
+		return objUsuario.listarUsuariosEmpleados();
+	}
+	public int registraUsuarioEmpleado(UsuarioDTO u){
+		return objUsuario.registrarUsuarioEmpleado(u);
+	}
+	public UsuarioDTO buscaUsuarioempleado(int idUsuario){
+		return objUsuario.buscarUsuarioempleado(idUsuario);
+	}
+	public int modificaUsuarioEmpleado(UsuarioDTO u){
+		return objUsuario.modificarUsuarioEmpleado(u);
+	}
+	public int eliminaUsuarioEmpleado(int idUsuario){
+		return objUsuario.eliminarUsuarioEmpleado(idUsuario);
 	}
 }

@@ -35,37 +35,37 @@
           <div class="form-group">
             <label for="inputNombres" class="col-sm-3 control-label">Nombres</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" name="txtNombres">
+              <input type="text" class="form-control" id="inputNombres" placeholder="Nombres" name="txtNombres" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoPaterno" class="col-sm-3 control-label">Apellido Paterno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno" name="txtApellidoPaterno">
+              <input type="text" class="form-control" id="inputApellidoPaterno" placeholder="Apellido Paterno" name="txtApellidoPaterno" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputApellidoMaterno" class="col-sm-3 control-label">Apellido Materno</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno" name="txtApellidoMaterno">
+              <input type="text" class="form-control" id="inputApellidoMaterno" placeholder="Apellido Materno" name="txtApellidoMaterno" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputfechaNacimiento" class="col-sm-3 control-label">Fecha Nacimiento</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="inputfechaNacimiento" name="txtFecha">
+              <input type="date" class="form-control" id="inputfechaNacimiento" name="txtFecha" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDNI" class="col-sm-3 control-label">DNI</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="txtDNI">
+              <input type="text" class="form-control" id="inputDNI" placeholder="DNI" name="txtDNI" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputCorreo" class="col-sm-3 control-label">Correo</label>
             <div class="col-sm-5">
-              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" name="txtCorreo">
+              <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" name="txtCorreo" required>
             </div>
           </div>
           <div class="form-group">
@@ -86,26 +86,27 @@
             <label for="selectSexo" class="col-sm-3 control-label">Sexo</label>
             <div class="col-sm-5">
               <select name="selectSexo" id="selectSexo" class="form-control">
-                <ct:cboDinamico sql="SQL_SEXO" nombre="cboSexo"></ct:cboDinamico>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
             </select>
             </div>
           </div>
           <div class="form-group">
             <label for="inputTelefono" class="col-sm-3 control-label">Teléfono</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono">
+              <input type="text" class="form-control" id="inputTelefono" placeholder="Teléfono" name="txtTelefono" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputLogin" class="col-sm-3 control-label">Login</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputLogin" placeholder="Login" name="txtLogin">
+              <input type="text" class="form-control" id="inputLogin" placeholder="Login" name="txtLogin" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="txtPassword">
+              <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="txtPassword" required>
             </div>
           </div>
           <div class="form-group">

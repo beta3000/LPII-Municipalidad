@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="jstlc" uri="http://java.sun.com/jstl/core_rt"%>      
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -16,147 +17,80 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- DataTables -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables_themeroller.min.css">
   </head>
   <body>
     <%@include file="a-menu.jsp" %>
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Lista de Empleados Municipales</h1>
-        <p>En la siguiente lista se muestran los Empleados Municipales registrados en el Sistema.</p>
-        <a href="a-empleados-nuevo.jsp">
+        <h1 class="text-left">Lista de Empleados Municipales <a href="a-empleados-nuevo.jsp">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-plus"></span>
                   Agregar Nuevo
                 </button>
-        </a>
+        </a></h1>
+        <p>En la siguiente lista se muestran los Empleados Municipales registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->
-    <!-- Inicio Tabla Lista de Administradores -->
+    <!-- Inicio Tabla Lista de Empleados -->
     <div class="container">
       <div class="row">
-        <table class="table table-bordered table-hover">
-          <tr>
-            <th>ID</th>
-            <th>Nombres</th>
-            <th>Ap. Paterno</th>
-            <th>Ap. Materno</th>
-            <th>Login</th>
-            <th>Operación</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Andres Emilio</td>
-            <td>Casas</td>
-            <td>Rojas</td>
-            <td>login0125</td>
+        <table id="tabla" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombres</th>
+              <th>Ap. Paterno</th>
+              <th>Ap. Materno</th>
+              <th>Fecha Nacimiento</th>
+              <th>Login</th>
+              <th>PassWord</th>
+              <th>Distrito</th>
+              <th>Categoría</th>
+              <th>Operación</th>
+            </tr>
+          </thead>  
+          <jstlc:forEach items="${requestScope.listaEmpleados }" var="l">
+            <tr>
+              <td>${l.idUsuario}</td>
+            <td>${l.nombresUsuario}</td>
+            <td>${l.apellidoPaternoUsuario}</td>
+            <td>${l.apellidoMaternoUsuario}</td>
+            <td>${l.fechaNacimientoUsuario}</td>
+            <td>${l.loginUsuario}</td>
+            <td>${l.passwordUsuario}</td>
+            <td>${l.nombreDistrito}</td>
+            <td>${l.descripcionTipoUsuario}</td>
             <td>
-              <a href="#">
+              <a href="MantenimientoUsuario?tipo=cargarDatosAdministrador&idUsuarioAdministrador=${l.idUsuario}">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-pencil"></span>
                   Editar
                 </button>
               </a>
-              <a href="#">
+              <a href="MantenimientoUsuario?tipo=eliminarAdministrador&idUsuarioAdministrador=${l.idUsuario}">
                 <button class="btn btn-danger">
                   <span class="glyphicon glyphicon-remove"></span>
                   Eliminar
                 </button>
               </a>
             </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Andres Emilio</td>
-            <td>Casas</td>
-            <td>Rojas</td>
-            <td>login0125</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  Editar
-                </button>
-              </a>
-              <a href="#">
-                <button class="btn btn-danger">
-                  <span class="glyphicon glyphicon-remove"></span>
-                  Eliminar
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Andres Emilio</td>
-            <td>Casas</td>
-            <td>Rojas</td>
-            <td>login0125</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  Editar
-                </button>
-              </a>
-              <a href="#">
-                <button class="btn btn-danger">
-                  <span class="glyphicon glyphicon-remove"></span>
-                  Eliminar
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Andres Emilio</td>
-            <td>Casas</td>
-            <td>Rojas</td>
-            <td>login0125</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  Editar
-                </button>
-              </a>
-              <a href="#">
-                <button class="btn btn-danger">
-                  <span class="glyphicon glyphicon-remove"></span>
-                  Eliminar
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Andres Emilio</td>
-            <td>Casas</td>
-            <td>Rojas</td>
-            <td>login0125</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-pencil"></span>
-                  Editar
-                </button>
-              </a>
-              <a href="#">
-                <button class="btn btn-danger">
-                  <span class="glyphicon glyphicon-remove"></span>
-                  Eliminar
-                </button>
-              </a>
-            </td>
-          </tr>
+            </tr>
+          </jstlc:forEach>
         </table>
       </div>
     </div>
-    <!-- Fin Tabla Lista de Administradores -->
+    <!-- Fin Tabla Lista de Empleados -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/misFunciones.js"></script>
   </body>
 </html>

@@ -17,39 +17,43 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- DataTables -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables_themeroller.min.css">
   </head>
   <body>
     <%@include file="a-menu.jsp" %>
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Lista de Administradores</h1>
-        <p>En la siguiente lista se muestran los Administradores registrados en el Sistema.</p>
-        <a href="a-administradores-nuevo.jsp">
+        <h1 class="text-left">Lista de Administradores <a href="a-administradores-nuevo.jsp">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-plus"></span>
                   Agregar Nuevo
                 </button>
-        </a>
+        </a></h1>
+        <p>En la siguiente lista se muestran los Administradores registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->
     <!-- Inicio Tabla Lista de Administradores -->
     <div class="container">
       <div class="row">
-        <table class="table table-bordered table-hover">
-          <tr>
-            <th>ID</th>
-            <th>Nombres</th>
-            <th>Ap. Paterno</th>
-            <th>Ap. Materno</th>
-            <th>Fecha Nacimiento</th>
-            <th>Login</th>
-            <th>PassWord</th>
-            <th>Distrito</th>
-            <th>Categoría</th>
-            <th>Operación</th>
-          </tr>
+        <table id="tabla" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombres</th>
+              <th>Ap. Paterno</th>
+              <th>Ap. Materno</th>
+              <th>Fecha Nacimiento</th>
+              <th>Login</th>
+              <th>PassWord</th>
+              <th>Distrito</th>
+              <th>Categoría</th>
+              <th>Operación</th>
+            </tr>
+          </thead>  
           <jstlc:forEach items="${requestScope.listaAdministradores }" var="l">
             <tr>
               <td>${l.idUsuario}</td>
@@ -85,5 +89,8 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/misFunciones.js"></script>
   </body>
 </html>
