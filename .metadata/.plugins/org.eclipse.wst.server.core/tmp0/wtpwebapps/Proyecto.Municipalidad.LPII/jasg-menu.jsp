@@ -19,18 +19,10 @@
             <ul class="nav navbar-nav">
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  CRONOGRAMAS<b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="jasg-cronogramas-1-listado.jsp">Requerimiento Vehicular</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   INFORMES<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="jasg-informes-1-listado.jsp">Servicio Vehicular</a></li>
+                  <li><a href="MantenimientoInforme?tipo=listarInformeServicioVehicularJASG">Servicio Vehicular</a></li>
                 </ul>
               </li>
             </ul>

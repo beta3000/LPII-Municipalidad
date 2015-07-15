@@ -22,12 +22,12 @@ public class MySqlMemorandoDAO implements MemorandoDAO {
 		try {
 			cn = MySqlDBConexion.getConexion();
 			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
-					+ "am.descripcionAuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando "
-					+ "u.idUsuarioRemitente "
+					+ "am.descripcionAsuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando, "
+					+ "m.idUsuarioRemitente "
 					+ "from memorando as m inner join asuntomemorando as am "
 					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
 					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
-					+ "m.idUsuarioRemitente = u.idUsuario "
+					+ "on m.idUsuarioRemitente = u.idUsuario "
 					+ "where m.idAsuntoMemorando = 1";
 			pstm = cn.prepareStatement(sql);
 			rs = pstm.executeQuery();
@@ -70,12 +70,12 @@ public class MySqlMemorandoDAO implements MemorandoDAO {
 		try {
 			cn = MySqlDBConexion.getConexion();
 			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
-					+ "am.descripcionAuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando "
-					+ "u.idUsuarioRemitente "
+					+ "am.descripcionAsuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando, "
+					+ "m.idUsuarioRemitente "
 					+ "from memorando as m inner join asuntomemorando as am "
 					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
 					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
-					+ "m.idUsuarioRemitente = u.idUsuario "
+					+ "on m.idUsuarioRemitente = u.idUsuario "
 					+ "where m.idAsuntoMemorando = 2";
 			pstm = cn.prepareStatement(sql);
 			rs = pstm.executeQuery();
@@ -138,7 +138,7 @@ public class MySqlMemorandoDAO implements MemorandoDAO {
 	}
 
 	@Override
-	public int revisarMemorando(int idMemorando) {
+	public int aprobarMemorando(int idMemorando) {
 		int estado = -1;
 		Connection cn = null;
 		PreparedStatement pstm = null;
@@ -148,6 +148,81 @@ public class MySqlMemorandoDAO implements MemorandoDAO {
 			cn = MySqlDBConexion.getConexion();
 			sql = "update memorando "
 					+ "set idEstadoMemorando = 2 "
+					+ "where idMemorando = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idMemorando);
+			estado = pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return estado;
+	}
+
+	@Override
+	public MemorandoDTO buscarMemorando(int idMemorando) {
+		MemorandoDTO m = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
+					+ "am.descripcionAsuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando, "
+					+ "m.idUsuarioRemitente "
+					+ "from memorando as m inner join asuntomemorando as am "
+					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
+					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
+					+ "on m.idUsuarioRemitente = u.idUsuario "
+					+ "where m.idMemorando = ?";
+			pstm = cn.prepareStatement(sql);
+			pstm.setInt(1, idMemorando);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()){
+				m = new MemorandoDTO();
+				m.setIdMemorando(rs.getInt(1));
+				m.setFechaMemorando(rs.getString(2));
+				m.setContenidoMemorando(rs.getString(3));
+				m.setIdAsuntoMemorando(rs.getInt(4));
+				m.setDescripcionAsuntoMemorando(rs.getString(5));
+				m.setIdEstadoMemorando(rs.getInt(6));
+				m.setDescripcionEstadoMemorando(rs.getString(7));
+				m.setIdUsuarioRemitente(rs.getInt(8));
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return m;
+	}
+
+	@Override
+	public int desaprobarMemorando(int idMemorando) {
+		int estado = -1;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "update memorando "
+					+ "set idEstadoMemorando = 3 "
 					+ "where idMemorando = ?";
 			pstm = cn.prepareStatement(sql);
 			pstm.setInt(1, idMemorando);

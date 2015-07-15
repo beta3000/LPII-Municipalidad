@@ -39,31 +39,18 @@
         <table class="table table-bordered table-hover">
           <tr>
             <th>ID</th>
-            <th>Remitente</th>
             <th>Fecha</th>
             <th>Asunto</th>
-            <th>Operación</th>
+            <th>Contenido</th>
           </tr>
-          <jstlc:forEach items="${requestScope.listaMemorandosRequerimientoVehicular }" var="l">
+          <jstlc:forEach items="${requestScope.listaMemorandoRequerimientoVehicular }" var="l">
           	<tr>
           		<td>${l.idMemorando}</td>
+          		<td>${l.fechaMemorando}</td>
+          		<td>${l.descripcionAsuntoMemorando}</td>
+                <td>${l.contenidoMemorando}</td>
           	</tr>
           </jstlc:forEach>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
         </table>
       </div>
     </div>

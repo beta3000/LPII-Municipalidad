@@ -1,0 +1,13 @@
+package service;
+
+import interfaces.InformeDAO;
+import utils.Constantes;
+import dao.DAOFactory;
+
+public class ManteInformeService {
+
+	DAOFactory fabrica = DAOFactory.getDAOFactory(Constantes.ORIGEN_DATOS);
+	InformeDAO objMemorando = fabrica.getInformeDAO();
+	
+	
+}

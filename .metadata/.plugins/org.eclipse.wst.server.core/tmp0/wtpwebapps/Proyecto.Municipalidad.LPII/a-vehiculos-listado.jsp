@@ -48,13 +48,13 @@
           </tr>
           <jstlc:forEach items="${requestScope.listaVehiculos }" var="l">
             <tr>
-              <td>${l.idVehiculo}</td>
-            <td>${l.placaVehiculo}</td>
-            <td>${l.marcaVehiculo}</td>
-            <td>${l.modeloVehiculo}</td>
-            <td>${l.anioFabricacionVehiculo}</td>
-            <td>${l.colorVehiculo}</td>
-            <td>
+              	<td>${l.idVehiculo}</td>
+	            <td>${l.placaVehiculo}</td>
+	            <td>${l.marcaVehiculo}</td>
+	            <td>${l.modeloVehiculo}</td>
+	            <td>${l.anioFabricacionVehiculo}</td>
+	            <td>${l.colorVehiculo}</td>
+	            <td>
               <a href="MantenimientoVehiculo?tipo=cargarDatos&idVehiculo=${l.idVehiculo}">
                 <button class="btn btn-primary">
                   <span class="glyphicon glyphicon-pencil"></span>

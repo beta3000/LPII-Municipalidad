@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,6 +20,11 @@
     <![endif]-->
   </head>
   <body>
+  <%
+  	Date curDate = new Date();
+  	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+  	String DateToStr = format.format(curDate);
+  %>
     <%@include file="ja-menu.jsp" %>
     <!-- Inicio cabezera -->
     <div class="container">
@@ -30,11 +37,11 @@
     <!-- Inicio Formulario de Registro-->
     <div class="container">
       <div class="row">
-        <form action="" class="form-horizontal" name="" method="POST">
+        <form action="MantenimientoMemorando?tipo=registrarMemorando&idAsunto=2&idEstado=1&idusuario=${sessionScope.USUARIO.idUsuario}&txtFecha=<%=DateToStr %>" class="form-horizontal" name="" method="POST">
         <div class="form-group">
             <label for="inputFechaMemorando" class="col-sm-3 control-label">Fecha Memorando</label>
             <div class="col-sm-5">
-              <input type="date" class="form-control" id="inputFechaMemorando" name="txtFecha" required>
+              <input type="text" class="form-control" id="inputFechaMemorando" name="txtFecha" value="<%=DateToStr %>" required disabled="disabled">
             </div>
           </div>
           <div class="form-group">

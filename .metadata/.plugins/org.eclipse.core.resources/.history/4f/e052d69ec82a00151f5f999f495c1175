@@ -1,0 +1,93 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.InformeDTO;
+import interfaces.InformeDAO;
+
+public class MySqlInformeDAO implements InformeDAO {
+
+	@Override
+	public List<InformeDTO> listarInformesServicioVehicular() {
+		List<InformeDTO> data = new ArrayList<InformeDTO>();
+		InformeDTO i = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select i.idInforme,i.fechaInforme,i.fechaEntregaInforme,i.contenidoInforme,i.idUsuarioRemitente,"
+					+ "i.idAsuntoInforme, ai.descripcionAsuntoInforme, "
+					+ "i.idEstadoInforme, ei.descripcionEstadoInforme, "
+					+ "i.idTallerMecanico, tm.nombreTallerMecanico "
+					+ " from informe as i inner join asuntoinforme as ai "
+					+ " on i.idAsuntoInforme = ai.idAsuntoInforme inner join estadoinforme as ei "
+					+ " on i.idEstadoInforme = ei.idEstadoInforme inner join tallerMecanico as tm "
+					+ " on i.idTallerMecanico = tm.idTallerMecanico "
+					+ " where i.idAsuntoInforme = 1";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()){
+				i = new InformeDTO();
+				
+				
+				data.add(i);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs != null){rs.close();}
+				if(pstm != null){pstm.close();}
+				if(cn != null){cn.close();}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public List<InformeDTO> listarInformesReparacionVehicular() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int registrarInformeServicioVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int registrarInformeReparacionVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int aprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int desaprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public InformeDTO buscarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

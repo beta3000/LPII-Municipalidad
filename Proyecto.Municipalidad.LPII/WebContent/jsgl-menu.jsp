@@ -22,15 +22,7 @@
                   MEMORANDOS<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="jsgl-memorandos-2-listado.jsp">Reparación Vehicular</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  INFORMES<b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="jsgl-informes-2-listado.jsp">Reparación Vehicular</a></li>
+                  <li><a href="MantenimientoMemorando?tipo=listarMemorandoReparacionVehicularJSGL">Reparación Vehicular</a></li>
                 </ul>
               </li>
             </ul>

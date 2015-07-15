@@ -1,0 +1,16 @@
+package beans;
+
+public class InformeDTO {
+
+	private int idInforme;
+	private String fechainforme;
+	private String fechaEntregaInforme;
+	private String contenidoInforme;
+	private int idUsuarioRemitente;
+	private int idAsuntoInforme;
+	private String descripcionAsuntoInforme;
+	private int idEstadoInforme;
+	private String descripcionEstadoInforme;
+	private int idTallerMecanico;
+	
+}

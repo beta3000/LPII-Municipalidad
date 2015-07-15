@@ -22,17 +22,8 @@
                   MEMORANDOS<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-memorandos-1-listado.jsp">Requerimiento Vehicular</a></li>
-                  <li><a href="a-memorandos-2-listado.jsp">Reparación Vehicular</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  CRONOGRAMAS<b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="a-cronogramas-1-listado.jsp">Requerimiento Vehicular</a></li>
-                  <li><a href="a-cronogramas-2-listado.jsp">Reparación Vehicular</a></li>
+                  <li><a href="MantenimientoMemorando?tipo=listarMemorandoRequerimientoVehicularAdmin">Requerimiento Vehicular</a></li>
+                  <li><a href="MantenimientoMemorando?tipo=listarMemorandoReparacionVehicularAdmin">Reparación Vehicular</a></li>
                 </ul>
               </li>
               <li class="dropdown">
@@ -40,8 +31,7 @@
                   INFORMES<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="a-informes-1-listado.jsp">Servicio Vehicular</a></li>
-                   <li><a href="a-informes-2-listado.jsp">Reparación Vehicular</a></li>
+                  <li><a href="MantenimientoInforme?tipo=listarInformeServicioVehicularAdmin">Servicio Vehicular</a></li>
                 </ul>
               </li>
               <li class="dropdown">

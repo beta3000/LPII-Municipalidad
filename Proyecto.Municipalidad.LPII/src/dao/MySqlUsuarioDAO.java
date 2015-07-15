@@ -275,7 +275,9 @@ public class MySqlUsuarioDAO implements UsuarioDAO {
 		}
 		finally{
 			try {
-				if(rs!=null)rs.close();if(pstm!=null)pstm.close();if(cn!=null)cn.close();
+				if(rs!=null){rs.close();}
+				if(pstm!=null){pstm.close();}
+				if(cn!=null){cn.close();}
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}

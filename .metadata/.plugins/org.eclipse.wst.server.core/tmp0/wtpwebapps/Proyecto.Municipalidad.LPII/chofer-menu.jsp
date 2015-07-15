@@ -22,7 +22,7 @@
                   INFORMES<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="chofer-informes-1-listado.jsp">Servicio Vehicular</a></li>
+                  <li><a href="MantenimientoInforme?tipo=listarInformeServicioVehicularChofer">Servicio Vehicular</a></li>
                 </ul>
               </li>
             </ul>

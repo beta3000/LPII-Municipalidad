@@ -1,0 +1,53 @@
+package misServlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import service.ManteInformeService;
+
+/**
+ * Servlet implementation class MantenimientoInforme
+ */
+public class MantenimientoInforme extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	ManteInformeService m = new ManteInformeService();
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MantenimientoInforme() {
+        super();
+        
+    }
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String tipo = request.getParameter("tipo");
+		
+		if(tipo.equals("listarInformeServicioVehicularChofer")){
+			listarInformeServicioVehicularChofer(request,response);
+		}else if(tipo.equals("registrarInformeServicioVehicular")){
+			registrarInformeServicioVehicular(request,response);
+		}
+	}
+
+	private void registrarInformeServicioVehicular(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		
+	}
+
+	private void listarInformeServicioVehicularChofer(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setAttribute("listaInformeServicioVehicularChofer", m.listaInformesServicioVehicular());
+		request.getRequestDispatcher("chofer-informes-1-listado.jsp").forward(request, response);
+	}
+
+}

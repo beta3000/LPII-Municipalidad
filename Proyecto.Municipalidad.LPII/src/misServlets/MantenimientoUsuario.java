@@ -184,7 +184,20 @@ public class MantenimientoUsuario extends HttpServlet {
 				//crear sesion
 				HttpSession laSesion = request.getSession();
 				laSesion.setAttribute("USUARIO", u);
-				request.getRequestDispatcher("a-escritorio.jsp").forward(request, response);
+				if(u.getIdTipoUsuario() == 1){
+					request.getRequestDispatcher("a-escritorio.jsp").forward(request, response);
+				}else if(u.getIdTipoUsuario() == 2 && u.getIdAreaMunicipal() != 2 && u.getIdAreaMunicipal() != 3 ){
+					request.getRequestDispatcher("ja-escritorio.jsp").forward(request, response);
+				}else if(u.getIdTipoUsuario() == 4){
+					request.getRequestDispatcher("se-escritorio.jsp").forward(request, response);
+				}else if(u.getIdTipoUsuario() == 2 && u.getIdAreaMunicipal() == 2){
+					request.getRequestDispatcher("jasg-escritorio.jsp").forward(request, response);
+				}else if(u.getIdTipoUsuario() == 3){
+					request.getRequestDispatcher("chofer-escritorio.jsp").forward(request, response);
+				}else if(u.getIdTipoUsuario() == 2 && u.getIdAreaMunicipal() == 3){
+					request.getRequestDispatcher("jsgl-escritorio.jsp").forward(request, response);
+				}
+				
 			}else{//no coincide la clave
 				request.setAttribute("msj", "Clave no coincide con el usuario...");
 				request.getRequestDispatcher("login.jsp").forward(request, response);

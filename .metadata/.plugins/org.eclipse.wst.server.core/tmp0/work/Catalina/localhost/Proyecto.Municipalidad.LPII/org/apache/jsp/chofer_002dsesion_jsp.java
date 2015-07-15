@@ -51,10 +51,10 @@ public final class chofer_002dsesion_jsp extends org.apache.jasper.runtime.HttpJ
       _jspx_out = out;
 
  
-	//if(session.getAttribute("USUARIO")==null){//no se inicio sesion
-	//	request.setAttribute("msj", "Debe iniciar Sesión");
-	//	pageContext.forward("login.jsp");
-	//}
+	if(session.getAttribute("USUARIO")==null){//no se inicio sesion
+		request.setAttribute("msj", "Debe iniciar Sesión");
+		pageContext.forward("login.jsp");
+	}
 
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

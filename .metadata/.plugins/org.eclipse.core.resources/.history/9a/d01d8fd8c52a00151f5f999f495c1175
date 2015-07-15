@@ -1,0 +1,16 @@
+package interfaces;
+
+import java.util.List;
+
+import beans.InformeDTO;
+import beans.MemorandoDTO;
+
+public interface InformeDAO {
+
+	public List<InformeDTO> listarInformesServicioVehicular();
+	public List<InformeDTO> listarMemorandosReparacionVehicular();
+	public int registrarMemorando(MemorandoDTO m);
+	public int aprobarMemorando(int idInforme);
+	public int desaprobarMemorando(int idInforme);
+	public MemorandoDTO buscarMemorando(int idInforme);
+}

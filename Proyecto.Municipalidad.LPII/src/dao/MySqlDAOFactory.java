@@ -1,6 +1,7 @@
 package dao;
 
 import interfaces.ComboDAO;
+import interfaces.InformeDAO;
 import interfaces.MemorandoDAO;
 import interfaces.TallerMecanicoDAO;
 import interfaces.UsuarioDAO;
@@ -31,6 +32,12 @@ public class MySqlDAOFactory extends DAOFactory {
 	@Override
 	public MemorandoDAO getMemorandoDAO() {
 		return new MySqlMemorandoDAO();
+	}
+
+	@Override
+	public InformeDAO getInformeDAO() {
+		
+		return new MySqlInformeDAO();
 	}
 
 }

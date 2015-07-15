@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public final class ja_002dmemorandos_002d1_002dnuevo_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -56,6 +58,8 @@ public final class ja_002dmemorandos_002d1_002dnuevo_jsp extends org.apache.jasp
       _jspx_out = out;
 
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"es\">\r\n");
       out.write("  <head>\r\n");
@@ -74,6 +78,13 @@ public final class ja_002dmemorandos_002d1_002dnuevo_jsp extends org.apache.jasp
       out.write("    <![endif]-->\r\n");
       out.write("  </head>\r\n");
       out.write("  <body>\r\n");
+      out.write("  ");
+
+  	Date curDate = new Date();
+  	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+  	String DateToStr = format.format(curDate);
+  
+      out.write("\r\n");
       out.write("    ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "ja-sesion.jsp", out, false);
       out.write("\r\n");
@@ -100,8 +111,8 @@ public final class ja_002dmemorandos_002d1_002dnuevo_jsp extends org.apache.jasp
       out.write("                  MEMORANDOS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"ja-memorandos-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
-      out.write("                  <li><a href=\"ja-memorandos-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoMemorando?tipo=listarMemorandoRequerimientoVehicular\">Requerimiento Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoMemorando?tipo=listarMemorandoReparacionVehicular\">Reparación Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("            </ul>\r\n");
@@ -134,11 +145,17 @@ public final class ja_002dmemorandos_002d1_002dnuevo_jsp extends org.apache.jasp
       out.write("    <!-- Inicio Formulario de Registro-->\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"row\">\r\n");
-      out.write("        <form action=\"\" class=\"form-horizontal\" name=\"\" method=\"POST\">\r\n");
+      out.write("        <form action=\"MantenimientoMemorando?tipo=registrarMemorando&idAsunto=1&idEstado=1&idusuario=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${sessionScope.USUARIO.idUsuario}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("&txtFecha=");
+      out.print(DateToStr );
+      out.write("\" class=\"form-horizontal\" name=\"\" method=\"POST\">\r\n");
       out.write("        <div class=\"form-group\">\r\n");
       out.write("            <label for=\"inputFechaMemorando\" class=\"col-sm-3 control-label\">Fecha Memorando</label>\r\n");
       out.write("            <div class=\"col-sm-5\">\r\n");
-      out.write("              <input type=\"date\" class=\"form-control\" id=\"inputFechaMemorando\" name=\"txtFecha\" required>\r\n");
+      out.write("              <input type=\"text\" class=\"form-control\" id=\"inputFechaMemorando\" name=\"txtFecha\" value=\"");
+      out.print(DateToStr );
+      out.write("\" required disabled=\"disabled\">\r\n");
       out.write("            </div>\r\n");
       out.write("          </div>\r\n");
       out.write("          <div class=\"form-group\">\r\n");

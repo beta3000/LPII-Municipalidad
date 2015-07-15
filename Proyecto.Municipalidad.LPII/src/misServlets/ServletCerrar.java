@@ -19,7 +19,7 @@ public class ServletCerrar extends HttpServlet {
      */
     public ServletCerrar() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**

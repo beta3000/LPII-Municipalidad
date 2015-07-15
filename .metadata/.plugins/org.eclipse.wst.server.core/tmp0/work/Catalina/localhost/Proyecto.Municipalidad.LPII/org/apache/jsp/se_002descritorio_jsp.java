@@ -103,7 +103,7 @@ public final class se_002descritorio_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                  MEMORANDOS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"se-memorandos-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoMemorando?tipo=listarMemorandoRequerimientoVehicularSecretaria\">Requerimiento Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li> \r\n");
       out.write("            </ul>\r\n");

@@ -1,0 +1,52 @@
+package dao;
+
+import java.util.List;
+
+import beans.InformeDTO;
+import interfaces.InformeDAO;
+
+public class MySqlInformeDAO implements InformeDAO {
+
+	@Override
+	public List<InformeDTO> listarInformesServicioVehicular() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<InformeDTO> listarInformesReparacionVehicular() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int registrarInformeServicioVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int registrarInformeReparacionVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int aprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int desaprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public InformeDTO buscarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -24,7 +24,14 @@ public class ManteMemorandoService {
 		return objMemorando.registrarMemorando(m);
 	}
 	
-	public int revisaMemorando(int idMemorando) {
-		return objMemorando.revisarMemorando(idMemorando);
+	public int aprobarMemorando(int idMemorando) {
+		return objMemorando.aprobarMemorando(idMemorando);
+	}
+	public int desaprobarMemorando(int idMemorando) {
+		return objMemorando.desaprobarMemorando(idMemorando);
+	}
+	
+	public MemorandoDTO buscaMemorando(int idMemorando){
+		return objMemorando.buscarMemorando(idMemorando);
 	}
 }

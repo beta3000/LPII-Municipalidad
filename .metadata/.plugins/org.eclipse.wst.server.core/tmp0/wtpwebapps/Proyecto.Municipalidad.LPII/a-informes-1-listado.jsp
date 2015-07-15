@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="jstlc" uri="http://java.sun.com/jstl/core_rt"%>      
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -30,91 +31,24 @@
     <!-- Inicio Tabla Lista -->
     <div class="container">
       <div class="row">
-        <table class="table table-bordered table-hover">
-          <tr>
-            <th>ID</th>
-            <th>Remitente</th>
-            <th>Destinatario</th>
-            <th>Fecha</th>
-            <th>Asunto</th>
-            <th>Operación</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Requerimiento de Vehículos y Choferes</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-        </table>
+       <table class="table table-bordered table-hover">
+	          <tr>
+	            <th>ID</th>
+	            <th>Fecha</th>
+	            <th>Asunto</th>
+	            <th>Contenido</th>
+	            <th>Estado</th>
+	          </tr>
+	          <jstlc:forEach items="${requestScope.listaInformeServicioVehicularAdmin }" var="l">
+	          	<tr>
+	          		<td>${l.idInforme}</td>
+	          		<td>${l.fechaInforme}</td>
+	          		<td>${l.descripcionAsuntoInforme}</td>
+	                <td>${l.contenidoInforme}</td>
+	                <td>${l.descripcionEstadoInforme}</td>
+	          	</tr>
+	          </jstlc:forEach>
+	        </table>
       </div>
     </div>
     <!-- Fin Tabla Lista  -->

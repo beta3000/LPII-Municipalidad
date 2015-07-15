@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="jstlc" uri="http://java.sun.com/jstl/core_rt"%>     
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Memorandos - Mantenimiento de Vehículos</title>
+    <title>Memorandos - Reparación Vehicular</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,99 +23,53 @@
     <!-- Inicio cabezera -->
     <div class="container">
       <div class="row">
-        <h1 class="text-left">Memorandos de Mantenimiento de Vehículos</h1>
-        <p>En la siguiente lista se muestran los Memorandos de Mantenimiento de Vehículos registrados en el Sistema.</p>
+        <h1 class="text-left">Memorandos de Reparación Vehicular</h1>
+        <p>En la siguiente lista se muestran los Memorandos de Reparación Vehicular registrados en el Sistema.</p>
       </div>
     </div>
     <!-- Fin cabezera-->
     <!-- Inicio Tabla Lista -->
     <div class="container">
       <div class="row">
-        <table class="table table-bordered table-hover">
-          <tr>
-            <th>ID</th>
-            <th>Remitente</th>
-            <th>Destinatario</th>
-            <th>Fecha</th>
-            <th>Asunto</th>
-            <th>Operación</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Mantenimiento de Vehículos</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Mantenimiento de Vehículos</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Mantenimiento de Vehículos</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Mantenimiento de Vehículos</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Carlos Manrique</td>
-            <td>Pedro Zambrano</td>
-            <td>15-09-2015</td>
-            <td>Mantenimiento de Vehículos</td>
-            <td>
-              <a href="#">
-                <button class="btn btn-primary">
-                  <span class="glyphicon glyphicon-new-window"></span>
-                  Ver
-                </button>
-              </a>
-            </td>
-          </tr>
-        </table>
+         <table class="table table-bordered table-hover">
+	          <tr>
+	            <th>ID</th>
+	            <th>Fecha</th>
+	            <th>Asunto</th>
+	            <th>Contenido</th>
+	            <th>Estado</th>
+	            <th>Operación</th>
+	          </tr>
+	          <jstlc:forEach items="${requestScope.listaMemorandoReparacionVehicularJSGL }" var="l">
+	          	<tr>
+	          		<td>${l.idMemorando}</td>
+	          		<td>${l.fechaMemorando}</td>
+	          		<td>${l.descripcionAsuntoMemorando}</td>
+	                <td>${l.contenidoMemorando}</td>
+	                <td>${l.descripcionEstadoMemorando}</td>
+			        <td>
+		              <a href="MantenimientoMemorando?tipo=cargarDatosMemorandoJSGL&idMemorando=${l.idMemorando}">
+		                <button class="btn btn-primary">
+		                  <span class="glyphicon glyphicon-new-window"></span>
+		                  Revisar
+		                </button>
+		              </a>
+				      <a href="MantenimientoMemorando?tipo=aprobarMemorandoJSGL&idMemorando=${l.idMemorando}">
+		                <button class="btn btn-success">
+		                  <span class="glyphicon glyphicon-ok"></span>
+		                  Aprobar
+		                </button>
+		              </a>
+		              <a href="MantenimientoMemorando?tipo=desaprobarMemorandoJSGL&idMemorando=${l.idMemorando}">
+		                <button class="btn btn-danger">
+		                  <span class="glyphicon glyphicon-remove"></span>
+		                  Desaprobar
+		                </button>
+		              </a>
+		            </td>
+	          	</tr>
+	          </jstlc:forEach>
+	        </table>
       </div>
     </div>
     <!-- Fin Tabla Lista  -->

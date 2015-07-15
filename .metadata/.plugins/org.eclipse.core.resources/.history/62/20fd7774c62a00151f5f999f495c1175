@@ -1,0 +1,80 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import utils.MySqlDBConexion;
+import beans.InformeDTO;
+import beans.MemorandoDTO;
+import interfaces.InformeDAO;
+
+public class MySqlInformeDAO implements InformeDAO {
+
+	@Override
+	public List<InformeDTO> listarInformesServicioVehicular() {
+		List<InformeDTO> data = new ArrayList<InformeDTO>();
+		InformeDTO i = null;
+		Connection cn = null;
+		PreparedStatement pstm = null;
+		String sql = "";
+		ResultSet rs = null;
+		try {
+			cn = MySqlDBConexion.getConexion();
+			sql = "select m.idMemorando,m.fechaMemorando,m.contenidoMemorando,m.idAsuntoMemorando, "
+					+ "am.descripcionAsuntoMemorando,em.idEstadoMemorando,em.descripcionEstadoMemorando, "
+					+ "m.idUsuarioRemitente "
+					+ "from memorando as m inner join asuntomemorando as am "
+					+ "on m.idAsuntoMemorando = am.idAsuntoMemorando inner join estadomemorando em "
+					+ "on m.idEstadoMemorando = em.idEstadoMemorando inner join usuario as u "
+					+ "on m.idUsuarioRemitente = u.idUsuario "
+					+ "where m.idAsuntoMemorando = 1";
+			pstm = cn.prepareStatement(sql);
+			rs = pstm.executeQuery();
+			
+			while(rs.next()){
+				i = new InformeDTO();
+				
+				
+				data.add(i);
+	}
+
+	@Override
+	public List<InformeDTO> listarInformesReparacionVehicular() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int registrarInformeServicioVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int registrarInformeReparacionVehicular(InformeDTO i) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int aprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int desaprobarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public InformeDTO buscarInforme(int idInforme) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

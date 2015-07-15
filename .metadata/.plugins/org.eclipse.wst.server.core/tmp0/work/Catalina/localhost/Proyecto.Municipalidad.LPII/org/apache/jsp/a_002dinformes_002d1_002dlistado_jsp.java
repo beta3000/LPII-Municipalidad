@@ -16,6 +16,8 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
     _jspx_dependants.add("/a-menu.jsp");
   }
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems;
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -24,11 +26,13 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -56,6 +60,7 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
       _jspx_out = out;
 
       out.write("\r\n");
+      out.write("      \r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"es\">\r\n");
       out.write("  <head>\r\n");
@@ -100,17 +105,8 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
       out.write("                  MEMORANDOS<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-memorandos-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
-      out.write("                  <li><a href=\"a-memorandos-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
-      out.write("                </ul>\r\n");
-      out.write("              </li>\r\n");
-      out.write("              <li class=\"dropdown\">\r\n");
-      out.write("                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n");
-      out.write("                  CRONOGRAMAS<b class=\"caret\"></b>\r\n");
-      out.write("                </a>\r\n");
-      out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-cronogramas-1-listado.jsp\">Requerimiento Vehicular</a></li>\r\n");
-      out.write("                  <li><a href=\"a-cronogramas-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoMemorando?tipo=listarMemorandoRequerimientoVehicularAdmin\">Requerimiento Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoMemorando?tipo=listarMemorandoReparacionVehicularAdmin\">Reparación Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
@@ -118,8 +114,7 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
       out.write("                  INFORMES<b class=\"caret\"></b>\r\n");
       out.write("                </a>\r\n");
       out.write("                <ul class=\"dropdown-menu\">\r\n");
-      out.write("                  <li><a href=\"a-informes-1-listado.jsp\">Servicio Vehicular</a></li>\r\n");
-      out.write("                   <li><a href=\"a-informes-2-listado.jsp\">Reparación Vehicular</a></li>\r\n");
+      out.write("                  <li><a href=\"MantenimientoInforme?tipo=listarInformeServicioVehicularAdmin\">Servicio Vehicular</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("              </li>\r\n");
       out.write("              <li class=\"dropdown\">\r\n");
@@ -170,91 +165,19 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
       out.write("    <!-- Inicio Tabla Lista -->\r\n");
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"row\">\r\n");
-      out.write("        <table class=\"table table-bordered table-hover\">\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <th>ID</th>\r\n");
-      out.write("            <th>Remitente</th>\r\n");
-      out.write("            <th>Destinatario</th>\r\n");
-      out.write("            <th>Fecha</th>\r\n");
-      out.write("            <th>Asunto</th>\r\n");
-      out.write("            <th>Operación</th>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <td>1</td>\r\n");
-      out.write("            <td>Carlos Manrique</td>\r\n");
-      out.write("            <td>Pedro Zambrano</td>\r\n");
-      out.write("            <td>15-09-2015</td>\r\n");
-      out.write("            <td>Requerimiento de Vehículos y Choferes</td>\r\n");
-      out.write("            <td>\r\n");
-      out.write("              <a href=\"#\">\r\n");
-      out.write("                <button class=\"btn btn-primary\">\r\n");
-      out.write("                  <span class=\"glyphicon glyphicon-new-window\"></span>\r\n");
-      out.write("                  Ver\r\n");
-      out.write("                </button>\r\n");
-      out.write("              </a>\r\n");
-      out.write("            </td>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <td>1</td>\r\n");
-      out.write("            <td>Carlos Manrique</td>\r\n");
-      out.write("            <td>Pedro Zambrano</td>\r\n");
-      out.write("            <td>15-09-2015</td>\r\n");
-      out.write("            <td>Requerimiento de Vehículos y Choferes</td>\r\n");
-      out.write("            <td>\r\n");
-      out.write("              <a href=\"#\">\r\n");
-      out.write("                <button class=\"btn btn-primary\">\r\n");
-      out.write("                  <span class=\"glyphicon glyphicon-new-window\"></span>\r\n");
-      out.write("                  Ver\r\n");
-      out.write("                </button>\r\n");
-      out.write("              </a>\r\n");
-      out.write("            </td>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <td>1</td>\r\n");
-      out.write("            <td>Carlos Manrique</td>\r\n");
-      out.write("            <td>Pedro Zambrano</td>\r\n");
-      out.write("            <td>15-09-2015</td>\r\n");
-      out.write("            <td>Requerimiento de Vehículos y Choferes</td>\r\n");
-      out.write("            <td>\r\n");
-      out.write("              <a href=\"#\">\r\n");
-      out.write("                <button class=\"btn btn-primary\">\r\n");
-      out.write("                  <span class=\"glyphicon glyphicon-new-window\"></span>\r\n");
-      out.write("                  Ver\r\n");
-      out.write("                </button>\r\n");
-      out.write("              </a>\r\n");
-      out.write("            </td>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <td>1</td>\r\n");
-      out.write("            <td>Carlos Manrique</td>\r\n");
-      out.write("            <td>Pedro Zambrano</td>\r\n");
-      out.write("            <td>15-09-2015</td>\r\n");
-      out.write("            <td>Requerimiento de Vehículos y Choferes</td>\r\n");
-      out.write("            <td>\r\n");
-      out.write("              <a href=\"#\">\r\n");
-      out.write("                <button class=\"btn btn-primary\">\r\n");
-      out.write("                  <span class=\"glyphicon glyphicon-new-window\"></span>\r\n");
-      out.write("                  Ver\r\n");
-      out.write("                </button>\r\n");
-      out.write("              </a>\r\n");
-      out.write("            </td>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("          <tr>\r\n");
-      out.write("            <td>1</td>\r\n");
-      out.write("            <td>Carlos Manrique</td>\r\n");
-      out.write("            <td>Pedro Zambrano</td>\r\n");
-      out.write("            <td>15-09-2015</td>\r\n");
-      out.write("            <td>Requerimiento de Vehículos y Choferes</td>\r\n");
-      out.write("            <td>\r\n");
-      out.write("              <a href=\"#\">\r\n");
-      out.write("                <button class=\"btn btn-primary\">\r\n");
-      out.write("                  <span class=\"glyphicon glyphicon-new-window\"></span>\r\n");
-      out.write("                  Ver\r\n");
-      out.write("                </button>\r\n");
-      out.write("              </a>\r\n");
-      out.write("            </td>\r\n");
-      out.write("          </tr>\r\n");
-      out.write("        </table>\r\n");
+      out.write("       <table class=\"table table-bordered table-hover\">\r\n");
+      out.write("\t          <tr>\r\n");
+      out.write("\t            <th>ID</th>\r\n");
+      out.write("\t            <th>Fecha</th>\r\n");
+      out.write("\t            <th>Asunto</th>\r\n");
+      out.write("\t            <th>Contenido</th>\r\n");
+      out.write("\t            <th>Estado</th>\r\n");
+      out.write("\t          </tr>\r\n");
+      out.write("\t          ");
+      if (_jspx_meth_jstlc_005fforEach_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\t        </table>\r\n");
       out.write("      </div>\r\n");
       out.write("    </div>\r\n");
       out.write("    <!-- Fin Tabla Lista  -->\r\n");
@@ -275,5 +198,60 @@ public final class a_002dinformes_002d1_002dlistado_jsp extends org.apache.jaspe
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_jstlc_005fforEach_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  jstlc:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_jstlc_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_jstlc_005fforEach_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_jstlc_005fforEach_005f0.setParent(null);
+    // /a-informes-1-listado.jsp(42,11) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_jstlc_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.listaInformeServicioVehicularAdmin }", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /a-informes-1-listado.jsp(42,11) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_jstlc_005fforEach_005f0.setVar("l");
+    int[] _jspx_push_body_count_jstlc_005fforEach_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_jstlc_005fforEach_005f0 = _jspx_th_jstlc_005fforEach_005f0.doStartTag();
+      if (_jspx_eval_jstlc_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t          \t<tr>\r\n");
+          out.write("\t          \t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.idInforme}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t          \t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.fechaInforme}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t          \t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.descripcionAsuntoInforme}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.contenidoInforme}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t                <td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${l.descripcionEstadoInforme}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t          \t</tr>\r\n");
+          out.write("\t          ");
+          int evalDoAfterBody = _jspx_th_jstlc_005fforEach_005f0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_jstlc_005fforEach_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_jstlc_005fforEach_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_jstlc_005fforEach_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_jstlc_005fforEach_005f0.doFinally();
+      _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems.reuse(_jspx_th_jstlc_005fforEach_005f0);
+    }
+    return false;
   }
 }

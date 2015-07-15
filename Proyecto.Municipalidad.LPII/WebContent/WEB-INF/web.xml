@@ -60,4 +60,14 @@
     <servlet-name>MantenimientoMemorando</servlet-name>
     <url-pattern>/MantenimientoMemorando</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MantenimientoInforme</display-name>
+    <servlet-name>MantenimientoInforme</servlet-name>
+    <servlet-class>misServlets.MantenimientoInforme</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MantenimientoInforme</servlet-name>
+    <url-pattern>/MantenimientoInforme</url-pattern>
+  </servlet-mapping>
 </web-app>

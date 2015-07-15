@@ -22,8 +22,8 @@
                   MEMORANDOS<b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="ja-memorandos-1-listado.jsp">Requerimiento Vehicular</a></li>
-                  <li><a href="ja-memorandos-2-listado.jsp">Reparación Vehicular</a></li>
+                  <li><a href="MantenimientoMemorando?tipo=listarMemorandoRequerimientoVehicular">Requerimiento Vehicular</a></li>
+                  <li><a href="MantenimientoMemorando?tipo=listarMemorandoReparacionVehicular">Reparación Vehicular</a></li>
                 </ul>
               </li>
             </ul>
