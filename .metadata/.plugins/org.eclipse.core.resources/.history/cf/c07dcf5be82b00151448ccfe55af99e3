@@ -40,14 +40,12 @@
     <div class="container">
       <div class="row">
         <table class="table table-bordered table-hover">
-        <thead>
           <tr>
             <th>ID</th>
             <th>Fecha</th>
             <th>Asunto</th>
             <th>Contenido</th>
           </tr>
-        </thead>   
           <jstlc:forEach items="${requestScope.listaMemorandoRequerimientoVehicular }" var="l">
           	<tr>
           		<td>${l.idMemorando}</td>

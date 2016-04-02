@@ -77,6 +77,9 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
       out.write("      <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\r\n");
       out.write("      <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\r\n");
       out.write("    <![endif]-->\r\n");
+      out.write("    <!-- DataTables -->\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/jquery.dataTables.min.css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/jquery.dataTables_themeroller.min.css\">\r\n");
       out.write("  </head>\r\n");
       out.write("  <body>\r\n");
       out.write("    ");
@@ -145,12 +148,14 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
       out.write("    <div class=\"container\">\r\n");
       out.write("      <div class=\"row\">\r\n");
       out.write("        <table class=\"table table-bordered table-hover\">\r\n");
+      out.write("        <thead>\r\n");
       out.write("          <tr>\r\n");
       out.write("            <th>ID</th>\r\n");
       out.write("            <th>Fecha</th>\r\n");
       out.write("            <th>Asunto</th>\r\n");
       out.write("            <th>Contenido</th>\r\n");
       out.write("          </tr>\r\n");
+      out.write("        </thead>   \r\n");
       out.write("          ");
       if (_jspx_meth_jstlc_005fforEach_005f0(_jspx_page_context))
         return;
@@ -163,6 +168,9 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
       out.write("    <script src=\"js/jquery-1.11.3.min.js\"></script>\r\n");
       out.write("    <!-- Include all compiled plugins (below), or include individual files as needed -->\r\n");
       out.write("    <script src=\"js/bootstrap.min.js\"></script>\r\n");
+      out.write("    <!-- DataTables -->\r\n");
+      out.write("    <script src=\"js/jquery.dataTables.js\"></script>\r\n");
+      out.write("    <script src=\"js/misFunciones.js\"></script>\r\n");
       out.write("  </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -186,9 +194,9 @@ public final class ja_002dmemorandos_002d1_002dlistado_jsp extends org.apache.ja
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_jstlc_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fjstlc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_jstlc_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_jstlc_005fforEach_005f0.setParent(null);
-    // /ja-memorandos-1-listado.jsp(46,10) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /ja-memorandos-1-listado.jsp(51,10) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_jstlc_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.listaMemorandoRequerimientoVehicular }", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
-    // /ja-memorandos-1-listado.jsp(46,10) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /ja-memorandos-1-listado.jsp(51,10) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_jstlc_005fforEach_005f0.setVar("l");
     int[] _jspx_push_body_count_jstlc_005fforEach_005f0 = new int[] { 0 };
     try {
